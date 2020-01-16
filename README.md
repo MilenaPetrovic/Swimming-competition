@@ -6,3 +6,5 @@ User of the application is a swimming competition administrator, who manages on 
 Three tier architecture is implemented. Presentation Tier UI is done with Windows Forms and the communication width the Bussines Tier is managed through UIControler. Bussines Tier contains Controler in charge of communicating width the UIControler, Bussines logic consisting of Domain Classes and System Operations, and the final part is DatabaseBroker. DBB communicates with SQL Database which stores information about the system.
 
 Further development possibilities include creating a better UI for the administrator user; adding competitors as application users; 
+
+Software design process is fully documented in the included project documentation written in Serbian.
