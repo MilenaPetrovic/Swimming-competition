@@ -1,0 +1,15 @@
+D:\FON\PS\Seminarski\Plivacka takmicenja\KKI\obj\Debug\KKI.csprojAssemblyReference.cache
+D:\FON\PS\Seminarski\Plivacka takmicenja\KKI\obj\Debug\KKI.csproj.CoreCompileInputs.cache
+D:\FON\PS\Seminarski\Plivacka takmicenja\KKI\bin\Debug\KKI.dll
+D:\FON\PS\Seminarski\Plivacka takmicenja\KKI\bin\Debug\KKI.pdb
+D:\FON\PS\Seminarski\Plivacka takmicenja\KKI\bin\Debug\Domen.dll
+D:\FON\PS\Seminarski\Plivacka takmicenja\KKI\bin\Debug\Kontroler.dll
+D:\FON\PS\Seminarski\Plivacka takmicenja\KKI\bin\Debug\Sistemske operacije.dll
+D:\FON\PS\Seminarski\Plivacka takmicenja\KKI\bin\Debug\Broker.dll
+D:\FON\PS\Seminarski\Plivacka takmicenja\KKI\bin\Debug\Domen.pdb
+D:\FON\PS\Seminarski\Plivacka takmicenja\KKI\bin\Debug\Kontroler.pdb
+D:\FON\PS\Seminarski\Plivacka takmicenja\KKI\bin\Debug\Sistemske operacije.pdb
+D:\FON\PS\Seminarski\Plivacka takmicenja\KKI\bin\Debug\Broker.pdb
+D:\FON\PS\Seminarski\Plivacka takmicenja\KKI\obj\Debug\KKI.csproj.CopyComplete
+D:\FON\PS\Seminarski\Plivacka takmicenja\KKI\obj\Debug\KKI.dll
+D:\FON\PS\Seminarski\Plivacka takmicenja\KKI\obj\Debug\KKI.pdb

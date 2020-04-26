@@ -1,0 +1,28 @@
+D:\FON\PS\Seminarski\Plivacka takmicenja\Forme\bin\Debug\Forme.exe.config
+D:\FON\PS\Seminarski\Plivacka takmicenja\Forme\bin\Debug\Forme.exe
+D:\FON\PS\Seminarski\Plivacka takmicenja\Forme\bin\Debug\Forme.pdb
+D:\FON\PS\Seminarski\Plivacka takmicenja\Forme\obj\Debug\Forme.csprojAssemblyReference.cache
+D:\FON\PS\Seminarski\Plivacka takmicenja\Forme\obj\Debug\Forme.FrmGlavna.resources
+D:\FON\PS\Seminarski\Plivacka takmicenja\Forme\obj\Debug\Forme.FrmLogin.resources
+D:\FON\PS\Seminarski\Plivacka takmicenja\Forme\obj\Debug\Forme.Properties.Resources.resources
+D:\FON\PS\Seminarski\Plivacka takmicenja\Forme\obj\Debug\Forme.csproj.GenerateResource.cache
+D:\FON\PS\Seminarski\Plivacka takmicenja\Forme\obj\Debug\Forme.csproj.CoreCompileInputs.cache
+D:\FON\PS\Seminarski\Plivacka takmicenja\Forme\obj\Debug\Forme.exe
+D:\FON\PS\Seminarski\Plivacka takmicenja\Forme\obj\Debug\Forme.pdb
+D:\FON\PS\Seminarski\Plivacka takmicenja\Forme\obj\Debug\Forme.FrmPlivac.resources
+D:\FON\PS\Seminarski\Plivacka takmicenja\Forme\obj\Debug\Forme.FrmPlivaci.resources
+D:\FON\PS\Seminarski\Plivacka takmicenja\Forme\obj\Debug\Forme.FrmTakmicenja.resources
+D:\FON\PS\Seminarski\Plivacka takmicenja\Forme\obj\Debug\Forme.FrmTakmicenje.resources
+D:\FON\PS\Seminarski\Plivacka takmicenja\Forme\obj\Debug\Forme.FrmUnosPlivaca.resources
+D:\FON\PS\Seminarski\Plivacka takmicenja\Forme\obj\Debug\Forme.FrmUnosTakmicenja.resources
+D:\FON\PS\Seminarski\Plivacka takmicenja\Forme\bin\Debug\Domen.dll
+D:\FON\PS\Seminarski\Plivacka takmicenja\Forme\bin\Debug\KKI.dll
+D:\FON\PS\Seminarski\Plivacka takmicenja\Forme\bin\Debug\Kontroler.dll
+D:\FON\PS\Seminarski\Plivacka takmicenja\Forme\bin\Debug\Sistemske operacije.dll
+D:\FON\PS\Seminarski\Plivacka takmicenja\Forme\bin\Debug\Broker.dll
+D:\FON\PS\Seminarski\Plivacka takmicenja\Forme\bin\Debug\Domen.pdb
+D:\FON\PS\Seminarski\Plivacka takmicenja\Forme\bin\Debug\KKI.pdb
+D:\FON\PS\Seminarski\Plivacka takmicenja\Forme\bin\Debug\Kontroler.pdb
+D:\FON\PS\Seminarski\Plivacka takmicenja\Forme\bin\Debug\Sistemske operacije.pdb
+D:\FON\PS\Seminarski\Plivacka takmicenja\Forme\bin\Debug\Broker.pdb
+D:\FON\PS\Seminarski\Plivacka takmicenja\Forme\obj\Debug\Forme.csproj.CopyComplete

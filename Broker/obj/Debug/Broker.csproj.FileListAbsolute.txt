@@ -1,0 +1,9 @@
+D:\FON\PS\Seminarski\Plivacka takmicenja\Broker\obj\Debug\Broker.csprojAssemblyReference.cache
+D:\FON\PS\Seminarski\Plivacka takmicenja\Broker\obj\Debug\Broker.csproj.CoreCompileInputs.cache
+D:\FON\PS\Seminarski\Plivacka takmicenja\Broker\bin\Debug\Broker.dll
+D:\FON\PS\Seminarski\Plivacka takmicenja\Broker\bin\Debug\Broker.pdb
+D:\FON\PS\Seminarski\Plivacka takmicenja\Broker\bin\Debug\Domen.dll
+D:\FON\PS\Seminarski\Plivacka takmicenja\Broker\bin\Debug\Domen.pdb
+D:\FON\PS\Seminarski\Plivacka takmicenja\Broker\obj\Debug\Broker.csproj.CopyComplete
+D:\FON\PS\Seminarski\Plivacka takmicenja\Broker\obj\Debug\Broker.dll
+D:\FON\PS\Seminarski\Plivacka takmicenja\Broker\obj\Debug\Broker.pdb

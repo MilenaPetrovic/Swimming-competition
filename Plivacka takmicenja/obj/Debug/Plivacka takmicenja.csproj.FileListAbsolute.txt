@@ -1,0 +1,9 @@
+D:\FON\PS\Seminarski\Plivacka takmicenja\Plivacka takmicenja\bin\Debug\Plivacka takmicenja.exe.config
+D:\FON\PS\Seminarski\Plivacka takmicenja\Plivacka takmicenja\bin\Debug\Plivacka takmicenja.exe
+D:\FON\PS\Seminarski\Plivacka takmicenja\Plivacka takmicenja\bin\Debug\Plivacka takmicenja.pdb
+D:\FON\PS\Seminarski\Plivacka takmicenja\Plivacka takmicenja\obj\Debug\Plivacka takmicenja.csprojAssemblyReference.cache
+D:\FON\PS\Seminarski\Plivacka takmicenja\Plivacka takmicenja\obj\Debug\Plivacka_takmicenja.Properties.Resources.resources
+D:\FON\PS\Seminarski\Plivacka takmicenja\Plivacka takmicenja\obj\Debug\Plivacka takmicenja.csproj.GenerateResource.cache
+D:\FON\PS\Seminarski\Plivacka takmicenja\Plivacka takmicenja\obj\Debug\Plivacka takmicenja.csproj.CoreCompileInputs.cache
+D:\FON\PS\Seminarski\Plivacka takmicenja\Plivacka takmicenja\obj\Debug\Plivacka takmicenja.exe
+D:\FON\PS\Seminarski\Plivacka takmicenja\Plivacka takmicenja\obj\Debug\Plivacka takmicenja.pdb
