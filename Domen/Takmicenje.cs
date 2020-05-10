@@ -10,11 +10,13 @@ namespace Domen
     public class Takmicenje : IDomenskiObjekat
     {
         int takmicenjeID;
+        string nazivTakmicenja;
         DateTime datumOdrzavanja;
         Mesto mestoOdrzavanja;
         int brojPrijava;
 
         public int TakmicenjeID { get => takmicenjeID; set => takmicenjeID = value; }
+        public string NazivTakmicenja { get => nazivTakmicenja; set => nazivTakmicenja = value; }
         public DateTime DatumOdrzavanja { get => datumOdrzavanja; set => datumOdrzavanja = value; }
         public Mesto MestoOdrzavanja { get => mestoOdrzavanja; set => mestoOdrzavanja = value; }
         public int BrojPrijava { get => brojPrijava; set => brojPrijava = value; }
@@ -23,11 +25,12 @@ namespace Domen
 
         public string UslovPretrage => "";
 
-        public string VrednostiZaInsert => $"{TakmicenjeID}, '{DatumOdrzavanja}', {BrojPrijava}, '{MestoOdrzavanja.Ptt}'";
+        public string VrednostiZaInsert => $"{TakmicenjeID}, '{NazivTakmicenja}', '{DatumOdrzavanja}', {BrojPrijava}, '{MestoOdrzavanja.Ptt}'";
 
         public string VrednostiZaUpdate => "";
 
         public string PrimarniKljuc => "takmicenjeID";
+
 
         public void PostaviPrimarniKljuc(int id)
         {

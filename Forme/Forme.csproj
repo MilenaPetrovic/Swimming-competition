@@ -70,11 +70,11 @@
     <Compile Include="FrmPlivaci.Designer.cs">
       <DependentUpon>FrmPlivaci.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmTakmicenja.cs">
+    <Compile Include="FrmPrijava.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmTakmicenja.Designer.cs">
-      <DependentUpon>FrmTakmicenja.cs</DependentUpon>
+    <Compile Include="FrmPrijava.Designer.cs">
+      <DependentUpon>FrmPrijava.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmTakmicenje.cs">
       <SubType>Form</SubType>
@@ -108,8 +108,8 @@
     <EmbeddedResource Include="FrmPlivaci.resx">
       <DependentUpon>FrmPlivaci.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmTakmicenja.resx">
-      <DependentUpon>FrmTakmicenja.cs</DependentUpon>
+    <EmbeddedResource Include="FrmPrijava.resx">
+      <DependentUpon>FrmPrijava.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmTakmicenje.resx">
       <DependentUpon>FrmTakmicenje.cs</DependentUpon>

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Forme
 {
-    public partial class FrmTakmicenja : Form
+    public partial class FrmPrijava : Form
     {
-        public FrmTakmicenja()
+        public FrmPrijava()
         {
             InitializeComponent();
         }

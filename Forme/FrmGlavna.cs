@@ -16,5 +16,10 @@ namespace Forme
         {
             InitializeComponent();
         }
+
+        private void s(object sender, EventArgs e)
+        {
+
+        }
     }
 }

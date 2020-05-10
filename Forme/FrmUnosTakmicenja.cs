@@ -20,8 +20,6 @@ namespace Forme
 
         private void PopuniFormu()
         {
-            //ucitati mesta
-            //postaviti na combo box
             List<string> mesta = KKI.KKITakmicenje.Instance.UcitajListuMesta();
             cmbMesta.DataSource = mesta;
 
@@ -33,7 +31,7 @@ namespace Forme
         {
             try
             {                
-                string poruka = KKI.KKITakmicenje.Instance.KreirajTakmicenje(cmbMesta.SelectedItem.ToString(), datumOdrzavanja.Text);
+                string poruka = KKI.KKITakmicenje.Instance.KreirajTakmicenje(txtNaziv.Text,cmbMesta.SelectedItem.ToString(), datumOdrzavanja.Text);
 
                 MessageBox.Show(poruka, "", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }

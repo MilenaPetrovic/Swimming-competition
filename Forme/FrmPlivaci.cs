@@ -15,6 +15,13 @@ namespace Forme
         public FrmPlivaci()
         {
             InitializeComponent();
+
+            PopuniFormu();
+        }
+
+        private void PopuniFormu()
+        {
+            throw new NotImplementedException();
         }
     }
 }

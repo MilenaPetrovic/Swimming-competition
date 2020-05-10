@@ -31,8 +31,11 @@ namespace KKI
 
         }
 
-        public string KreirajTakmicenje(string mesto, string datumOdrzavanja)
+        public string KreirajTakmicenje(string naziv, string mesto, string datumOdrzavanja)
         {
+            if (string.IsNullOrEmpty(naziv) || string.IsNullOrEmpty(naziv))
+                throw new Exception("Unesite sve podatke!");
+
             if (string.IsNullOrEmpty(mesto) || string.IsNullOrEmpty(mesto))
                 throw new Exception("Unesite sve podatke!");
 
@@ -48,6 +51,7 @@ namespace KKI
 
             Takmicenje t = new Takmicenje
             {
+                NazivTakmicenja = naziv,
                 MestoOdrzavanja = m,
                 BrojPrijava = 0,
                 DatumOdrzavanja = datum

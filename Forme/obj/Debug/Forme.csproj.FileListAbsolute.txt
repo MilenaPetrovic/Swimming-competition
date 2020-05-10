@@ -11,7 +11,6 @@ D:\FON\PS\Seminarski\Plivacka takmicenja\Forme\obj\Debug\Forme.exe
 D:\FON\PS\Seminarski\Plivacka takmicenja\Forme\obj\Debug\Forme.pdb
 D:\FON\PS\Seminarski\Plivacka takmicenja\Forme\obj\Debug\Forme.FrmPlivac.resources
 D:\FON\PS\Seminarski\Plivacka takmicenja\Forme\obj\Debug\Forme.FrmPlivaci.resources
-D:\FON\PS\Seminarski\Plivacka takmicenja\Forme\obj\Debug\Forme.FrmTakmicenja.resources
 D:\FON\PS\Seminarski\Plivacka takmicenja\Forme\obj\Debug\Forme.FrmTakmicenje.resources
 D:\FON\PS\Seminarski\Plivacka takmicenja\Forme\obj\Debug\Forme.FrmUnosPlivaca.resources
 D:\FON\PS\Seminarski\Plivacka takmicenja\Forme\obj\Debug\Forme.FrmUnosTakmicenja.resources
