@@ -31,14 +31,14 @@ namespace Forme
         {
             try
             {
-                char pol;
+                string pol;
                 if (rbM.Checked)
                 {
-                    pol = 'M';
+                    pol = "M";
                 }
                 else
                 {
-                    pol = 'Z';
+                    pol = "Z";
                 }
 
                 string poruka = KKI.KKIPlivac.Instance.KreirajPlivaca(txtIme.Text, txtPrezime.Text, cmbStil.SelectedItem.ToString(), pol, datum.Text);

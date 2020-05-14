@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -15,23 +16,32 @@ namespace Domen
         string prezimePlivaca;
         DateTime datumRodjenja;
         Kategorija kategorija;
-        char pol;
+        string pol;
 
         public int PlivacID { get => plivacID; set => plivacID = value; }
+        [DisplayName("Ime plivaca")]
         public string ImePlivaca { get => imePlivaca; set => imePlivaca = value; }
+        [DisplayName("Prezime plivaca")]
         public string PrezimePlivaca { get => prezimePlivaca; set => prezimePlivaca = value; }
+        [DisplayName("Datum rodjenja")]
         public DateTime DatumRodjenja { get => datumRodjenja; set => datumRodjenja = value; }
+        [DisplayName("Stil plivanja")]
         public Kategorija Kategorija { get => kategorija; set => kategorija = value; }
-        public char Pol { get => pol; set => pol = value; }
+        public string Pol { get => pol; set => pol = value; }
 
+        [Browsable(false)]
         public string NazivTabele => "Plivac";
 
+        [Browsable(false)]
         public string UslovPretrage => "";
 
+        [Browsable(false)]
         public string VrednostiZaInsert => $"{PlivacID},'{ImePlivaca}', '{PrezimePlivaca}', '{DatumRodjenja}', {Kategorija.KategorijaID}, '{Pol}'";
 
+        [Browsable(false)]
         public string VrednostiZaUpdate => "";
 
+        [Browsable(false)]
         public string PrimarniKljuc => "plivacID";
 
         public void PostaviPrimarniKljuc(int id)
@@ -41,7 +51,24 @@ namespace Domen
 
         public List<IDomenskiObjekat> VratiListu(SqlDataReader reader)
         {
-            throw new NotImplementedException();
+            List<IDomenskiObjekat> plivaci = new List<IDomenskiObjekat>();
+            while (reader.Read())
+            {
+                Plivac p = new Plivac
+                {
+                    PlivacID = (int)reader["plivacID"],
+                    ImePlivaca = (string)reader["imePlivaca"],
+                    PrezimePlivaca = (string)reader["prezimePlivaca"],
+                    DatumRodjenja = (DateTime)reader["datumRodjenja"],
+                    Kategorija = new Kategorija()
+                    {
+                        KategorijaID = (int)reader["kategorijaID"]
+                    },
+                    Pol = (string)reader["pol"]
+                };
+                plivaci.Add(p);
+            }
+            return plivaci;
         }
     }
 }

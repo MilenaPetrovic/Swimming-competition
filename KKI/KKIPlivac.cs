@@ -5,13 +5,15 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace KKI
 {
     public class KKIPlivac
     {
         public List<Kategorija> Stilovi { get; private set; }
-
+        public List<Plivac> Plivaci { get; private set; }
+        
         private static KKIPlivac _instance;
         public static KKIPlivac Instance
         {
@@ -29,7 +31,7 @@ namespace KKI
 
         }
 
-        public string KreirajPlivaca(string ime, string prezime, string stil, char pol, string datumRodjenja)
+        public string KreirajPlivaca(string ime, string prezime, string stil, string pol, string datumRodjenja)
         {
             if (string.IsNullOrEmpty(ime) || string.IsNullOrEmpty(prezime))
                 throw new Exception("Unesite sve podatke!");
@@ -37,7 +39,7 @@ namespace KKI
             if (string.IsNullOrEmpty(stil) || string.IsNullOrEmpty(stil))
                 throw new Exception("Unesite sve podatke!");
 
-            if (pol != 'M' && pol != 'Z')
+            if (pol[0] != 'M' && pol[0] != 'Z')
                 throw new Exception("Nije odabran pol!");
 
             if (!DateTime.TryParseExact(datumRodjenja, "dd-MM-yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime datum))
@@ -64,10 +66,31 @@ namespace KKI
             else return "Neuspesno dodavanje plivaca!";
         }
 
+        public void UcitajListuPlivaca(DataGridView dgvPlivaciPretraga)
+        {
+            Plivac p = new Plivac();
+            List<IDomenskiObjekat> rez = Kontroler.Kontroler.Instance.VratiListu(p);
+            //if (rez == null) return null;
+
+            List<Plivac> listaPlivaca = new List<Plivac>();
+            for(int i=0; i<rez.Count(); i++)
+            {
+                listaPlivaca.Add((Plivac)rez[i]);
+            }
+
+            Plivaci = listaPlivaca;
+
+            dgvPlivaciPretraga.DataSource = Plivaci;
+        }
+
+        public void PrikaziPodatkePlivaca(int brojReda)
+        {
+            
+        }
+
         public List<string> UcitajListuStilova()
         {
             Kategorija k = new Kategorija();
-
             List<IDomenskiObjekat> rez = Kontroler.Kontroler.Instance.VratiListu(k);
             if (rez == null) return null;
 
