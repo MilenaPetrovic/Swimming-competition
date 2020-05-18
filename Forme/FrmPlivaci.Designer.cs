@@ -65,6 +65,7 @@
             this.dgvPlivaciPretraga.Location = new System.Drawing.Point(29, 214);
             this.dgvPlivaciPretraga.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvPlivaciPretraga.Name = "dgvPlivaciPretraga";
+            this.dgvPlivaciPretraga.ReadOnly = true;
             this.dgvPlivaciPretraga.RowTemplate.Height = 24;
             this.dgvPlivaciPretraga.Size = new System.Drawing.Size(563, 214);
             this.dgvPlivaciPretraga.TabIndex = 8;

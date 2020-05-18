@@ -52,7 +52,53 @@ namespace Forme
                 {
                     KKIPlivac.Instance.PrikaziPodatkePlivaca(brojReda);
                 }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Greska", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                FrmPlivac frmPlivac = new FrmPlivac();
+                frmPlivac.ShowDialog();
             }
+            else if (dgvPlivaciPretraga.SelectedCells != null && dgvPlivaciPretraga.SelectedCells.Count > 1)
+            {
+                bool flag = true; //da li je izabrao razlicite
+                int brojReda = dgvPlivaciPretraga.SelectedCells[0].RowIndex;
+                foreach (DataGridViewCell cell in dgvPlivaciPretraga.SelectedCells)
+                {
+                    if (brojReda != cell.RowIndex)
+                    {
+                        flag = false;
+                        break;
+                    }
+                }
+
+                if (flag)
+                {
+                    try
+                    {
+                        KKIPlivac.Instance.PrikaziPodatkePlivaca(brojReda);
+                    }
+                    catch (Exception exc)
+                    {
+                        MessageBox.Show(exc.Message, "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                    FrmPlivac frmPlivac = new FrmPlivac();
+                    frmPlivac.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Morate izabrati tacno jedan red!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Morate izabrati tacno jedan red!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+            KKIPlivac.Instance.UcitajListuPlivaca(dgvPlivaciPretraga);
         }
     }
 }

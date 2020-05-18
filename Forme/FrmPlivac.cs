@@ -21,7 +21,74 @@ namespace Forme
 
         private void PopuniFormu()
         {
-            throw new NotImplementedException();
+            List<string> stilovi = KKI.KKIPlivac.Instance.UcitajListuStilova();
+            cmbStil.DataSource = stilovi;
+
+            datumRodjenja.CustomFormat = "dd-MM-yyyy";
+            datumRodjenja.Format = DateTimePickerFormat.Custom;
+
+            txtIme.Text = KKI.KKIPlivac.Instance.Plivac.ImePlivaca;
+            txtPrezime.Text = KKI.KKIPlivac.Instance.Plivac.PrezimePlivaca;
+            datumRodjenja.Text = KKI.KKIPlivac.Instance.Plivac.DatumRodjenja.ToString("dd-MM-yyyy");            
+            cmbStil.Text = KKI.KKIPlivac.Instance.Plivac.Kategorija.ImeKategorije;
+
+            string pol = KKI.KKIPlivac.Instance.Plivac.Pol;
+
+            if(pol[0] == 'M')
+            {
+                rbM.Select();
+            }
+            else
+            {
+                rbZ.Select();
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Dispose();
+        }
+
+        private void btnObrisi_Click(object sender, EventArgs e)
+        {
+            DialogResult rez = MessageBox.Show("Da li ste sigurni da zelite da obrisete izabrane aranzmane?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (rez == DialogResult.Cancel)
+                return;
+
+            try
+            {
+                string poruka = KKI.KKIPlivac.Instance.ObrisiPlivaca();
+                MessageBox.Show(poruka, "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Dispose();
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message, "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnIzmeni_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string pol;
+                if (rbM.Checked)
+                {
+                    pol = "M";
+                }
+                else
+                {
+                    pol = "Z";
+                }
+
+                string poruka = KKI.KKIPlivac.Instance.IzmeniPlivaca(txtIme.Text, txtPrezime.Text, cmbStil.SelectedItem.ToString(), pol, datumRodjenja.Text);
+
+                MessageBox.Show(poruka, "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Greska!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

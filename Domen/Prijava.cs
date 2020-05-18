@@ -9,9 +9,9 @@ namespace Domen
 {
     public class Prijava : IDomenskiObjekat
     {
-        DateTime datumPrijave;
-        Plivac plivac;
-        Takmicenje takmicenje;
+        private DateTime datumPrijave;
+        private Plivac plivac;
+        private Takmicenje takmicenje;
 
         public DateTime DatumPrijave { get => datumPrijave; set => datumPrijave = value; }
         public Plivac Plivac { get => plivac; set => plivac = value; }
@@ -34,7 +34,22 @@ namespace Domen
             throw new NotImplementedException();
         }
 
+        public void PostaviVrednost(IDomenskiObjekat ido)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void PostaviVrednostPodDomena(IDomenskiObjekat ido)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<IDomenskiObjekat> VratiListu(SqlDataReader reader)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IDomenskiObjekat VratiPodDomen()
         {
             throw new NotImplementedException();
         }

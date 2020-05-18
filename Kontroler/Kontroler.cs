@@ -98,5 +98,59 @@ namespace Kontroler
                 throw e;
             }
         }
+                
+        public bool ObrisiPlivaca(IDomenskiObjekat objekat)
+        {
+            OpstaSO oso = new ObrisiPlivaca();
+            try
+            {
+                oso.IzvrsiSO(objekat);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                throw e;
+            }
+
+            return true;
+        }
+
+        public List<IDomenskiObjekat> UcitajListuPlivaca()
+        {
+            IDomenskiObjekat ido = new Plivac();
+            OpstaSO oso = new UcitajListuPlivaca();
+
+            try
+            {
+                oso.IzvrsiSO(ido);
+                List<IDomenskiObjekat> lista = ((UcitajListuPlivaca)oso).lista;
+                return lista;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                throw e;
+            }
+
+        }
+
+        public bool Izmeni(IDomenskiObjekat objekat)
+        {
+            OpstaSO oso = new IzmeniPlivaca();
+            try
+            {
+                oso.IzvrsiSO(objekat);
+            }
+            catch
+            {
+                return false;
+            }
+
+            if (((IzmeniPlivaca)oso).Plivac != null)
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }

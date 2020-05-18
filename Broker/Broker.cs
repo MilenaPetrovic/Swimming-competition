@@ -79,5 +79,21 @@ namespace Broker
             return rez;
         }
 
+        public int Obrisi(IDomenskiObjekat objekat)
+        {
+            SqlCommand command = new SqlCommand("", konekcija, transakcija);
+            command.CommandText = $"DELETE FROM {objekat.NazivTabele} WHERE" +
+                $" {objekat.UslovPretrage}";
+            return command.ExecuteNonQuery();
+        }
+
+        public int Izmeni(IDomenskiObjekat objekat)
+        {
+            SqlCommand command = new SqlCommand("", konekcija, transakcija);
+            command.CommandText = $"UPDATE {objekat.NazivTabele} SET {objekat.VrednostiZaUpdate} " +
+                $"WHERE {objekat.UslovPretrage}";
+            return command.ExecuteNonQuery();            
+        }
+
     }
 }

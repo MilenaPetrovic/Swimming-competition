@@ -9,21 +9,27 @@ namespace Domen
 {
     public class Kategorija : IDomenskiObjekat
     {
-        int kategorijaID;
-        string imeKategorije;
+        private int kategorijaID;
+        private string imeKategorije;
 
         public int KategorijaID { get => kategorijaID; set => kategorijaID = value; }
         public string ImeKategorije { get => imeKategorije; set => imeKategorije = value; }
 
         public string NazivTabele => "Kategorija";
 
-        public string UslovPretrage => throw new NotImplementedException();
+        public string UslovPretrage => $"kategorijaID = {KategorijaID}";
 
         public string VrednostiZaInsert => throw new NotImplementedException();
 
         public string VrednostiZaUpdate => throw new NotImplementedException();
 
         public string PrimarniKljuc => "kategorijaID";
+
+        public override string ToString()
+        {
+            return ImeKategorije;
+            //return "jes";
+        }
 
         public void PostaviPrimarniKljuc(int id)
         {
@@ -43,6 +49,29 @@ namespace Domen
                 stilovi.Add(k);
             }
             return stilovi;
+        }
+
+        public IDomenskiObjekat VratiPodDomen()
+        {
+            return null;
+        }
+
+        public void PostaviVrednost(IDomenskiObjekat ido)
+        {
+            if (!(ido is Kategorija))
+            {
+                return;
+            }
+
+            Kategorija k = (Kategorija)ido;
+
+            KategorijaID = k.KategorijaID;
+            ImeKategorije = k.ImeKategorije;
+        }
+
+        public void PostaviVrednostPodDomena(IDomenskiObjekat ido)
+        {
+            return;
         }
     }
 }

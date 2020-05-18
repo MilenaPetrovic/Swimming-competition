@@ -10,11 +10,11 @@ namespace Domen
 {
     public class Admin : IDomenskiObjekat
     {
-        int adminID;
-        string username;
-        string password;
-        string ime;
-        string prezime;
+        private int adminID;
+        private string username;
+        private string password;
+        private string ime;
+        private string prezime;
 
         public int AdminID { get => adminID; set => adminID = value; }
         public string Username { get => username; set => username = value; }
@@ -37,6 +37,16 @@ namespace Domen
             throw new NotImplementedException();
         }
 
+        public void PostaviVrednost(IDomenskiObjekat ido)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void PostaviVrednostPodDomena(IDomenskiObjekat ido)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<IDomenskiObjekat> VratiListu(SqlDataReader reader)
         {
             List<IDomenskiObjekat> admini = new List<IDomenskiObjekat>();
@@ -53,6 +63,11 @@ namespace Domen
                 admini.Add(a);
             }
             return admini;
+        }
+
+        public IDomenskiObjekat VratiPodDomen()
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -9,11 +9,11 @@ namespace Domen
 {
     public class Takmicenje : IDomenskiObjekat
     {
-        int takmicenjeID;
-        string nazivTakmicenja;
-        DateTime datumOdrzavanja;
-        Mesto mestoOdrzavanja;
-        int brojPrijava;
+        private int takmicenjeID;
+        private string nazivTakmicenja;
+        private DateTime datumOdrzavanja;
+        private Mesto mestoOdrzavanja;
+        private int brojPrijava;
 
         public int TakmicenjeID { get => takmicenjeID; set => takmicenjeID = value; }
         public string NazivTakmicenja { get => nazivTakmicenja; set => nazivTakmicenja = value; }
@@ -37,11 +37,24 @@ namespace Domen
             TakmicenjeID = id;
         }
 
+        public void PostaviVrednost(IDomenskiObjekat ido)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void PostaviVrednostPodDomena(IDomenskiObjekat ido)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<IDomenskiObjekat> VratiListu(SqlDataReader reader)
         {
             throw new NotImplementedException();
         }
 
-        //List<Plivac> plivaci; da li?
+        public IDomenskiObjekat VratiPodDomen()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

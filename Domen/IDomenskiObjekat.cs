@@ -18,5 +18,9 @@ namespace Domen
         List<IDomenskiObjekat> VratiListu(SqlDataReader reader);
         void PostaviPrimarniKljuc(int id);
 
+        IDomenskiObjekat VratiPodDomen();
+        void PostaviVrednost(IDomenskiObjekat ido);
+        void PostaviVrednostPodDomena(IDomenskiObjekat ido);
+
     }
 }

@@ -9,8 +9,8 @@ namespace Domen
 {
     public class Mesto : IDomenskiObjekat
     {
-        int ptt;
-        string nazivMesta;
+        private int ptt;
+        private string nazivMesta;
 
         public int Ptt { get => ptt; set => ptt = value; }
         public string NazivMesta { get => nazivMesta; set => nazivMesta = value; }
@@ -25,9 +25,30 @@ namespace Domen
 
         public string PrimarniKljuc => "ptt";
 
+        public override string ToString()
+        {
+            return NazivMesta;
+        }
+
         public void PostaviPrimarniKljuc(int id)
         {
             throw new NotImplementedException();
+        }
+
+        public void PostaviVrednost(IDomenskiObjekat ido)
+        {
+            if (!(ido is Mesto))
+                return;
+
+            Mesto m = (Mesto)ido;
+
+            Ptt = m.Ptt;
+            NazivMesta = m.nazivMesta;
+        }
+
+        public void PostaviVrednostPodDomena(IDomenskiObjekat ido)
+        {
+            return;
         }
 
         public List<IDomenskiObjekat> VratiListu(SqlDataReader reader)
@@ -43,6 +64,11 @@ namespace Domen
                 mesta.Add(m);
             }
             return mesta;
+        }
+
+        public IDomenskiObjekat VratiPodDomen()
+        {
+            return null;
         }
     }
 }

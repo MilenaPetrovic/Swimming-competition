@@ -11,12 +11,12 @@ namespace Domen
     [Serializable]
     public class Plivac : IDomenskiObjekat
     {
-        int plivacID;
-        string imePlivaca;
-        string prezimePlivaca;
-        DateTime datumRodjenja;
-        Kategorija kategorija;
-        string pol;
+        private int plivacID;
+        private string imePlivaca;
+        private string prezimePlivaca;
+        private DateTime datumRodjenja;
+        private Kategorija kategorija;
+        private string pol;
 
         public int PlivacID { get => plivacID; set => plivacID = value; }
         [DisplayName("Ime plivaca")]
@@ -33,13 +33,13 @@ namespace Domen
         public string NazivTabele => "Plivac";
 
         [Browsable(false)]
-        public string UslovPretrage => "";
+        public string UslovPretrage => $"plivacID = {PlivacID}";
 
         [Browsable(false)]
         public string VrednostiZaInsert => $"{PlivacID},'{ImePlivaca}', '{PrezimePlivaca}', '{DatumRodjenja}', {Kategorija.KategorijaID}, '{Pol}'";
 
         [Browsable(false)]
-        public string VrednostiZaUpdate => "";
+        public string VrednostiZaUpdate => $"plivacID = {PlivacID}, imePlivaca = '{ImePlivaca}', prezimePlivaca = '{PrezimePlivaca}', datumRodjenja = '{DatumRodjenja}', kategorijaID = {Kategorija.KategorijaID}, pol = '{Pol}'";
 
         [Browsable(false)]
         public string PrimarniKljuc => "plivacID";
@@ -47,6 +47,29 @@ namespace Domen
         public void PostaviPrimarniKljuc(int id)
         {
             PlivacID = id;
+        }
+
+        public void PostaviVrednost(IDomenskiObjekat ido)
+        {
+            if (!(ido is Plivac))
+                return;
+
+            Plivac p = (Plivac)ido;
+
+            PlivacID = p.PlivacID;
+            ImePlivaca = p.ImePlivaca;
+            PrezimePlivaca = p.PrezimePlivaca;
+            DatumRodjenja = p.DatumRodjenja;
+            Kategorija = p.Kategorija;
+            Pol = p.Pol;
+        }
+
+        public void PostaviVrednostPodDomena(IDomenskiObjekat ido)
+        {
+            if(ido is Kategorija)
+            {
+                Kategorija = (Kategorija)ido;
+            }
         }
 
         public List<IDomenskiObjekat> VratiListu(SqlDataReader reader)
@@ -69,6 +92,16 @@ namespace Domen
                 plivaci.Add(p);
             }
             return plivaci;
+        }
+
+        public IDomenskiObjekat VratiPodDomen()
+        {
+            if(Kategorija != null && Kategorija.ImeKategorije == null)
+            {
+                return Kategorija as IDomenskiObjekat;
+            }
+
+            return null;
         }
     }
 }
