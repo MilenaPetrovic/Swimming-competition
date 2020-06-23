@@ -51,7 +51,7 @@ namespace Forme
 
         private void btnObrisi_Click(object sender, EventArgs e)
         {
-            DialogResult rez = MessageBox.Show("Da li ste sigurni da zelite da obrisete izabrane aranzmane?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            DialogResult rez = MessageBox.Show("Da li ste sigurni da zelite da obrisete izabranog plivaca?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             if (rez == DialogResult.Cancel)
                 return;
 

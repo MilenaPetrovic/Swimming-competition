@@ -99,6 +99,24 @@ namespace Kontroler
             }
         }
 
+        public List<IDomenskiObjekat> UcitajListuPrijava()
+        {
+            IDomenskiObjekat ido = new Prijava();
+            OpstaSO oso = new UcitajListuPrijava();
+
+            try
+            {
+                oso.IzvrsiSO(ido);
+                List<IDomenskiObjekat> lista = ((UcitajListuPrijava)oso).lista;
+                return lista;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                throw e;
+            }
+        }
+
         public List<IDomenskiObjekat> UcitajListuTakmicenja()
         {
             IDomenskiObjekat ido = new Takmicenje();
@@ -117,9 +135,9 @@ namespace Kontroler
             }
         }
 
-        public bool ObrisiPlivaca(IDomenskiObjekat objekat)
+        public bool Obrisi(IDomenskiObjekat objekat)
         {
-            OpstaSO oso = new ObrisiPlivaca();
+            OpstaSO oso = new Obrisi();
             try
             {
                 oso.IzvrsiSO(objekat);
@@ -154,7 +172,7 @@ namespace Kontroler
 
         public bool Izmeni(IDomenskiObjekat objekat)
         {
-            OpstaSO oso = new IzmeniPlivaca();
+            OpstaSO oso = new Izmeni();
             try
             {
                 oso.IzvrsiSO(objekat);
@@ -164,7 +182,7 @@ namespace Kontroler
                 return false;
             }
 
-            if (((IzmeniPlivaca)oso).Plivac != null)
+            if (((Izmeni)oso).Uspeh)
             {
                 return true;
             }

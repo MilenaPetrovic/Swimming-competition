@@ -19,7 +19,8 @@ namespace Forme
 
             UcitajPlivace();
 
-            dgvPlivaciPretraga.Columns[0].Visible = false;
+            //sad nesto nece
+            //dgvPlivaciPretraga.Columns[0].Visible = false;
             dgvPlivaciPretraga.Columns[1].Width = 80;
             dgvPlivaciPretraga.Columns[2].Width = 100;
             dgvPlivaciPretraga.Columns[3].Width = 100;

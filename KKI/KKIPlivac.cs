@@ -69,7 +69,7 @@ namespace KKI
 
         public string ObrisiPlivaca()
         {
-            if (Kontroler.Kontroler.Instance.ObrisiPlivaca(Plivac))
+            if (Kontroler.Kontroler.Instance.Obrisi(Plivac))
                 return "Uspesno je obrisan plivac!";
             else return "Nije uspelo brisanje plivaca!";
         }

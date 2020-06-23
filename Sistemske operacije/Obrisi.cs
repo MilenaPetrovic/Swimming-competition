@@ -7,7 +7,7 @@ using Domen;
 
 namespace Sistemske_operacije
 {
-    public class ObrisiPlivaca : OpstaSO
+    public class Obrisi : OpstaSO
     {
         protected override void IzvrsiOperaciju(IDomenskiObjekat objekat)
         {

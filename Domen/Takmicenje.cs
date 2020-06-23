@@ -15,7 +15,7 @@ namespace Domen
         private DateTime datumOdrzavanja;
         private Mesto mestoOdrzavanja;
         private int brojPrijava;
-        private List<Plivac> plivaci;
+        private List<Prijava> prijave;
 
 
         public int TakmicenjeID { get => takmicenjeID; set => takmicenjeID = value; }
@@ -28,18 +28,18 @@ namespace Domen
         [DisplayName("Broj prijava")]
         public int BrojPrijava { get => brojPrijava; set => brojPrijava = value; }
         [Browsable(false)]
-        public List<Plivac> Plivaci { get => plivaci; set => plivaci = value; }
+        public List<Prijava> Prijave { get => prijave; set => prijave = value; }
 
         public Takmicenje()
         {
-            Plivaci = new List<Plivac>();
+            Prijave = new List<Prijava>();
         }
 
         [Browsable(false)]
         public string NazivTabele => "Takmicenje";
 
         [Browsable(false)]
-        public string UslovPretrage => "";
+        public string UslovPretrage => $"takmicenjeID = {TakmicenjeID}";
 
         [Browsable(false)]
         public string VrednostiZaInsert => $"{TakmicenjeID}, '{NazivTakmicenja}', '{DatumOdrzavanja}', {BrojPrijava}, '{MestoOdrzavanja.Ptt}'";

@@ -34,11 +34,18 @@ namespace Forme
                 string poruka = KKI.KKITakmicenje.Instance.KreirajTakmicenje(txtNaziv.Text,cmbMesta.SelectedItem.ToString(), datumOdrzavanja.Text);
 
                 MessageBox.Show(poruka, "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                Dispose();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Greska!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Dispose();
         }
     }
 }

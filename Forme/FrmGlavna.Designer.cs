@@ -67,11 +67,12 @@
             this.plivaciToolStripMenuItem.Name = "plivaciToolStripMenuItem";
             this.plivaciToolStripMenuItem.Size = new System.Drawing.Size(63, 24);
             this.plivaciToolStripMenuItem.Text = "Plivaci";
+            this.plivaciToolStripMenuItem.Click += new System.EventHandler(this.plivaciToolStripMenuItem_Click);
             // 
             // unosNovogToolStripMenuItem
             // 
             this.unosNovogToolStripMenuItem.Name = "unosNovogToolStripMenuItem";
-            this.unosNovogToolStripMenuItem.Size = new System.Drawing.Size(163, 26);
+            this.unosNovogToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.unosNovogToolStripMenuItem.Text = "Unos novog";
             // 
             // btnDetaljniji
@@ -84,6 +85,7 @@
             this.btnDetaljniji.TabIndex = 20;
             this.btnDetaljniji.Text = "Detaljniji pregled";
             this.btnDetaljniji.UseVisualStyleBackColor = true;
+            this.btnDetaljniji.Click += new System.EventHandler(this.btnDetaljniji_Click);
             // 
             // groupBox1
             // 
@@ -108,7 +110,7 @@
             // dateTimePicker1
             // 
             this.dateTimePicker1.Location = new System.Drawing.Point(204, 105);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(265, 30);
             this.dateTimePicker1.TabIndex = 11;
@@ -198,6 +200,7 @@
             this.btnDodaj.TabIndex = 17;
             this.btnDodaj.Text = "Dodaj novo";
             this.btnDodaj.UseVisualStyleBackColor = true;
+            this.btnDodaj.Click += new System.EventHandler(this.btnDodaj_Click);
             // 
             // button1
             // 

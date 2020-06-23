@@ -41,13 +41,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IzmeniPlivaca.cs" />
+    <Compile Include="Izmeni.cs" />
     <Compile Include="KreirajPlivaca.cs" />
     <Compile Include="KreirajTakmicenje.cs" />
     <Compile Include="Login.cs" />
-    <Compile Include="ObrisiPlivaca.cs" />
+    <Compile Include="Obrisi.cs" />
     <Compile Include="OpstaSO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UcitajListuPrijava.cs" />
     <Compile Include="UcitajListuTakmicenja.cs" />
     <Compile Include="UcitajListuPlivaca.cs" />
     <Compile Include="VratiListu.cs" />

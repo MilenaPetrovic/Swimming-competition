@@ -17,7 +17,7 @@ namespace Forme
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new FrmLogin());
-            Application.Run(new FrmPlivaci());
+            Application.Run(new FrmGlavna());
         }
     }
 }

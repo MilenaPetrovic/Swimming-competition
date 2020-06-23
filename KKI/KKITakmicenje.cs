@@ -16,6 +16,8 @@ namespace KKI
         private List<Mesto> mesta;
         public List<Mesto> Mesta { get => mesta; set => mesta = value; }
         public List<Takmicenje> Takmicenja { get; private set; }
+        public Takmicenje Takmicenje { get; set; }
+
 
         public static KKITakmicenje Instance
         {
@@ -62,6 +64,66 @@ namespace KKI
             if (Kontroler.Kontroler.Instance.KreirajTakmicenje(t))
                 return "Uspesno dodato takmicenje!";
             else return "Neuspesno dodavanje takmicenja!";
+        }
+
+        public string IzmeniTakmicenje(string nazivTakmicenja, string brojPrijavljenih, string datumOdrzavanja, string mesto)
+        {
+            if (string.IsNullOrEmpty(nazivTakmicenja) || string.IsNullOrEmpty(nazivTakmicenja))
+                throw new Exception("Unesite sve podatke!");
+
+            if (string.IsNullOrEmpty(mesto) || string.IsNullOrEmpty(mesto))
+                throw new Exception("Unesite sve podatke!");
+
+            if (!DateTime.TryParseExact(datumOdrzavanja, "dd-MM-yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime datum))
+                throw new Exception("Neispravno unet datum!");
+
+            Mesto m = new Mesto();
+            for (int i = 0; i < Mesta.Count; i++)
+            {
+                if (Mesta[i].NazivMesta == mesto)
+                    m = Mesta[i];
+            }
+
+            Takmicenje t = new Takmicenje
+            {
+                TakmicenjeID = Takmicenje.TakmicenjeID,
+                NazivTakmicenja = nazivTakmicenja,
+                DatumOdrzavanja = datum,
+                MestoOdrzavanja = m
+            };
+
+            if (Kontroler.Kontroler.Instance.Izmeni(t))
+                return "Uspesno izmenjeno takmicenje!";
+            else return "Neuspesna izmena takmicenja!";
+        }
+
+        public string ObrisiTakmicenje()
+        {
+            if (Kontroler.Kontroler.Instance.Obrisi(Takmicenje))
+                return "Uspesno je obrisano takmicenje!";
+            else return "Nije uspelo brisanje takmicenja!";
+        }
+
+        public void UcitajPrijave(DataGridView dgvPrijavljeni)
+        {
+            List<IDomenskiObjekat> rez = Kontroler.Kontroler.Instance.UcitajListuPrijava();
+
+            //if (rez == null) return null;
+
+            List<Prijava> listaPrijava = new List<Prijava>();
+            for (int i = 0; i < rez.Count(); i++)
+            {
+                listaPrijava.Add((Prijava)rez[i]);
+            }
+
+            Takmicenje.Prijave = listaPrijava;
+
+            dgvPrijavljeni.DataSource = Takmicenje.Prijave;
+        }
+
+        public void PrikaziPodatkeTakmicenja(int brojReda)
+        {
+            Takmicenje = Takmicenja[brojReda];
         }
 
         public void UcitajListuTakmicenja(DataGridView dgvTakmicenja)
