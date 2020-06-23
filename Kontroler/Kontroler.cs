@@ -98,7 +98,25 @@ namespace Kontroler
                 throw e;
             }
         }
-                
+
+        public List<IDomenskiObjekat> UcitajListuTakmicenja()
+        {
+            IDomenskiObjekat ido = new Takmicenje();
+            OpstaSO oso = new UcitajListuTakmicenja();
+
+            try
+            {
+                oso.IzvrsiSO(ido);
+                List<IDomenskiObjekat> lista = ((UcitajListuTakmicenja)oso).lista;
+                return lista;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                throw e;
+            }
+        }
+
         public bool ObrisiPlivaca(IDomenskiObjekat objekat)
         {
             OpstaSO oso = new ObrisiPlivaca();

@@ -17,18 +17,13 @@ namespace Forme
         {
             InitializeComponent();
 
-            PopuniFormu();
+            UcitajPlivace();
 
             dgvPlivaciPretraga.Columns[0].Visible = false;
             dgvPlivaciPretraga.Columns[1].Width = 80;
             dgvPlivaciPretraga.Columns[2].Width = 100;
             dgvPlivaciPretraga.Columns[3].Width = 100;
             dgvPlivaciPretraga.Columns[5].Width = 50;
-        }
-
-        private void PopuniFormu()
-        {
-            UcitajPlivace();
         }
 
         private void UcitajPlivace()
@@ -97,6 +92,14 @@ namespace Forme
             {
                 MessageBox.Show("Morate izabrati tacno jedan red!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+
+            KKIPlivac.Instance.UcitajListuPlivaca(dgvPlivaciPretraga);
+        }
+
+        private void btnDodaj_Click(object sender, EventArgs e)
+        {
+            FrmUnosPlivaca frmUnosPlivaca = new FrmUnosPlivaca();
+            frmUnosPlivaca.ShowDialog();
 
             KKIPlivac.Instance.UcitajListuPlivaca(dgvPlivaciPretraga);
         }

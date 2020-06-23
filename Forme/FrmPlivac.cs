@@ -84,6 +84,8 @@ namespace Forme
                 string poruka = KKI.KKIPlivac.Instance.IzmeniPlivaca(txtIme.Text, txtPrezime.Text, cmbStil.SelectedItem.ToString(), pol, datumRodjenja.Text);
 
                 MessageBox.Show(poruka, "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                Dispose();
             }
             catch (Exception ex)
             {

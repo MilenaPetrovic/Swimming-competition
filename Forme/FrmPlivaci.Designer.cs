@@ -56,6 +56,7 @@
             this.btnDodaj.TabIndex = 5;
             this.btnDodaj.Text = "Dodaj novog";
             this.btnDodaj.UseVisualStyleBackColor = true;
+            this.btnDodaj.Click += new System.EventHandler(this.btnDodaj_Click);
             // 
             // dgvPlivaciPretraga
             // 

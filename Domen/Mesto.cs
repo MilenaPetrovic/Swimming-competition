@@ -17,7 +17,7 @@ namespace Domen
 
         public string NazivTabele => "Mesto";
 
-        public string UslovPretrage => throw new NotImplementedException();
+        public string UslovPretrage => $"ptt = {Ptt}";
 
         public string VrednostiZaInsert => throw new NotImplementedException();
 

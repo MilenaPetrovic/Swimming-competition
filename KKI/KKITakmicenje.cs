@@ -5,6 +5,7 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace KKI
 {
@@ -14,6 +15,7 @@ namespace KKI
 
         private List<Mesto> mesta;
         public List<Mesto> Mesta { get => mesta; set => mesta = value; }
+        public List<Takmicenje> Takmicenja { get; private set; }
 
         public static KKITakmicenje Instance
         {
@@ -60,6 +62,23 @@ namespace KKI
             if (Kontroler.Kontroler.Instance.KreirajTakmicenje(t))
                 return "Uspesno dodato takmicenje!";
             else return "Neuspesno dodavanje takmicenja!";
+        }
+
+        public void UcitajListuTakmicenja(DataGridView dgvTakmicenja)
+        {
+            List<IDomenskiObjekat> rez = Kontroler.Kontroler.Instance.UcitajListuTakmicenja();
+
+            //if (rez == null) return null;
+
+            List<Takmicenje> listaTakmicenja = new List<Takmicenje>();
+            for (int i = 0; i < rez.Count(); i++)
+            {
+                listaTakmicenja.Add((Takmicenje)rez[i]);
+            }
+
+            Takmicenja = listaTakmicenja;
+
+            dgvTakmicenja.DataSource = Takmicenja;
         }
 
         public List<string> UcitajListuMesta()
