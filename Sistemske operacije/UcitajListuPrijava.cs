@@ -13,7 +13,7 @@ namespace Sistemske_operacije
 
         protected override void IzvrsiOperaciju(IDomenskiObjekat objekat)
         {
-            List<IDomenskiObjekat> prijave = broker.VratiListu(objekat);
+            List<IDomenskiObjekat> prijave = broker.Pronadji(objekat);
 
             for (int i = 0; i < prijave.Count;)
             {

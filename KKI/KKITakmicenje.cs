@@ -106,7 +106,10 @@ namespace KKI
 
         public void UcitajPrijave(DataGridView dgvPrijavljeni)
         {
-            List<IDomenskiObjekat> rez = Kontroler.Kontroler.Instance.UcitajListuPrijava();
+            Prijava p = new Prijava();
+            p.Takmicenje = Takmicenje;
+
+            List<IDomenskiObjekat> rez = Kontroler.Kontroler.Instance.UcitajListuPrijava(p);
 
             //if (rez == null) return null;
 

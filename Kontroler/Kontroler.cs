@@ -99,9 +99,9 @@ namespace Kontroler
             }
         }
 
-        public List<IDomenskiObjekat> UcitajListuPrijava()
+        public List<IDomenskiObjekat> UcitajListuPrijava(Prijava p)
         {
-            IDomenskiObjekat ido = new Prijava();
+            IDomenskiObjekat ido = p;
             OpstaSO oso = new UcitajListuPrijava();
 
             try

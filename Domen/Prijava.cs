@@ -43,14 +43,14 @@ namespace Domen
         {
             get
             {
-                if (Takmicenje.TakmicenjeID != 0 && Plivac.PlivacID == null)
+                if (Takmicenje != null && Plivac == null)
                 {
                     return $"takmicenjeID = {Takmicenje.TakmicenjeID}";
                 }
-                else if (Takmicenje.TakmicenjeID == 0 && Plivac.PlivacID != null)
-                {
-                    return $"plivacID = '{Plivac.PlivacID}'";
-                }
+                //else if (Takmicenje.TakmicenjeID == 0 && Plivac != null)
+                //{
+                //    return $"plivacID = '{Plivac.PlivacID}'";
+                //}
                 else
                 {
                     return $"takmicenjeID = {Takmicenje.TakmicenjeID} AND plivacID = '{Plivac.PlivacID}'";
