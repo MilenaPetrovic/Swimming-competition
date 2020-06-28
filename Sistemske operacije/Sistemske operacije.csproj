@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EvidencijaRezultata.cs" />
+    <Compile Include="SacuvajNovePrijave.cs" />
     <Compile Include="Izmeni.cs" />
     <Compile Include="KreirajPlivaca.cs" />
     <Compile Include="KreirajTakmicenje.cs" />

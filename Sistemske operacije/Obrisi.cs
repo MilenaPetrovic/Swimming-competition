@@ -12,11 +12,6 @@ namespace Sistemske_operacije
         protected override void IzvrsiOperaciju(IDomenskiObjekat objekat)
         {
             broker.Obrisi(objekat);
-        }
-
-        protected override void Validacija(IDomenskiObjekat objekat)
-        {
-            throw new NotImplementedException();
-        }
+        }       
     }
 }

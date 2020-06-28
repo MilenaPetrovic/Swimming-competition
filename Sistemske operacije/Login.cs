@@ -10,11 +10,7 @@ namespace Sistemske_operacije
     public class Login : OpstaSO
     {
         public Admin Admin { get; private set; }
-
-        protected override void Validacija(IDomenskiObjekat objekat)
-        {
-            throw new NotImplementedException();
-        }
+        
         protected override void IzvrsiOperaciju(IDomenskiObjekat objekat)
         {
             List<IDomenskiObjekat> admini = broker.Pronadji((Admin)objekat);

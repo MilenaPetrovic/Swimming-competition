@@ -41,10 +41,5 @@ namespace Sistemske_operacije
             }
                 lista = takmicenja;
         }
-
-        protected override void Validacija(IDomenskiObjekat objekat)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

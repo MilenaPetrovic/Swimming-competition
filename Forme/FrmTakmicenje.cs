@@ -37,7 +37,9 @@ namespace Forme
 
             dgvPrijavljeni.Columns[0].Visible = false;
             dgvPrijavljeni.Columns[1].Visible = false;
-
+            dgvPrijavljeni.Columns[2].ReadOnly = true;
+            dgvPrijavljeni.Columns[3].ReadOnly = true;
+            dgvPrijavljeni.Columns[4].ReadOnly = true;
         }
 
         private void UcitajPrijave()
@@ -61,6 +63,7 @@ namespace Forme
         {
             FrmPrijava frmPrijava = new FrmPrijava();
             frmPrijava.ShowDialog();
+            KKITakmicenje.Instance.UcitajPrijave(dgvPrijavljeni);
         }
 
         private void btnIzmeni_Click(object sender, EventArgs e)
@@ -88,6 +91,12 @@ namespace Forme
             {
                 MessageBox.Show(exc.Message, "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnRezultati_Click(object sender, EventArgs e)
+        {
+            string poruka = KKI.KKITakmicenje.Instance.EvidencijaRezultata();
+            MessageBox.Show(poruka, "", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

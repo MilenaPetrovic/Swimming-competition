@@ -1,6 +1,7 @@
 ﻿using Domen;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Globalization;
 using System.Linq;
 using System.Text;
@@ -17,7 +18,7 @@ namespace KKI
         public List<Mesto> Mesta { get => mesta; set => mesta = value; }
         public List<Takmicenje> Takmicenja { get; private set; }
         public Takmicenje Takmicenje { get; set; }
-
+        public BindingList<Plivac> PrijavljeniPlivaci { get; set; }
 
         public static KKITakmicenje Instance
         {
@@ -29,10 +30,9 @@ namespace KKI
             }
         }
 
-
         private KKITakmicenje()
         {
-
+            PrijavljeniPlivaci = new BindingList<Plivac>();
         }
 
         public string KreirajTakmicenje(string naziv, string mesto, string datumOdrzavanja)
@@ -64,6 +64,117 @@ namespace KKI
             if (Kontroler.Kontroler.Instance.KreirajTakmicenje(t))
                 return "Uspesno dodato takmicenje!";
             else return "Neuspesno dodavanje takmicenja!";
+        }
+
+        public void IzaberiPlivace(DataGridView dgvI, List<DataGridViewRow> redovi)
+        {
+            foreach (DataGridViewRow red in redovi)
+            {
+                Plivac p = new Plivac
+                {
+                    PlivacID = (int)red.Cells[0].Value,
+                    ImePlivaca = (string)red.Cells[1].Value,
+                    PrezimePlivaca = (string)red.Cells[2].Value,
+                    DatumRodjenja = (DateTime)red.Cells[3].Value,
+                    Kategorija = red.Cells[4].Value as Kategorija,
+                    Pol = (string)red.Cells[5].Value
+                };
+
+                if (dgvI.Name.Equals("dgvSvi"))
+                {
+                    DodajPlivaca(p);                    
+                }
+                else
+                {
+                    UkloniPlivaca(p);
+                }
+            }
+        }
+
+        private void DodajPlivaca(Plivac p)
+        {
+            List<Plivac> dodavanje = new List<Plivac>();
+            foreach (Plivac pl in PrijavljeniPlivaci)
+            {
+                dodavanje.Add(pl);
+            }
+
+            foreach (Plivac pl in dodavanje)
+                if (pl.PlivacID == p.PlivacID)
+                    return;
+            //igrac dodat, prikazati poruku?
+                
+            PrijavljeniPlivaci.Add(p);                
+        }
+
+        public string EvidencijaRezultata()
+        {
+            if (Kontroler.Kontroler.Instance.EvidencijaRezultata(Takmicenje))
+            {
+                return "Uspesno evidentirani rezultati!";
+            }
+            else
+            {
+                return "Neuspesna evidencija rezultata!";
+            }
+        }
+
+        public string SacuvajNovePrijave()
+        {
+            List<Prijava> novePrijave = new List<Prijava>();
+            bool postoji = false;
+
+            foreach (Plivac plivac in PrijavljeniPlivaci)
+            {
+                foreach (Prijava prijava in Takmicenje.Prijave)
+                {
+                    if (prijava.Plivac.PlivacID == plivac.PlivacID)
+                    {
+                        novePrijave.Add(prijava);
+                        postoji = true;
+                        continue;
+                    }
+                }
+                if (!postoji)
+                {
+                    Prijava p = new Prijava
+                    {
+                        Takmicenje = Takmicenje,
+                        Plivac = plivac,
+                        DatumPrijave = new DateTime(),
+                        Pozicija = 0,
+                        OstvarenoVreme = 0
+                    };
+                    novePrijave.Add(p);
+                }
+                postoji = false;
+            }
+
+            Takmicenje.Prijave = novePrijave;
+
+            if (Kontroler.Kontroler.Instance.SacuvajNovePrijave(Takmicenje))
+            {
+                return "Uspesno dodate prijave.";
+            }
+            else
+            {
+                return "Neuspesno dodavanje prijava!";
+            }
+        }
+
+        private void UkloniPlivaca(Plivac p)
+        {
+            List<Plivac> uklanjanje = new List<Plivac>();
+            foreach (Plivac pl in PrijavljeniPlivaci)
+            {
+                uklanjanje.Add(pl);
+            }
+
+            foreach (Plivac plivac in uklanjanje)
+            {
+                if (p.PlivacID == plivac.PlivacID)
+                    PrijavljeniPlivaci.Remove(plivac);
+            }
         }
 
         public string IzmeniTakmicenje(string nazivTakmicenja, string brojPrijavljenih, string datumOdrzavanja, string mesto)
@@ -120,8 +231,13 @@ namespace KKI
             }
 
             Takmicenje.Prijave = listaPrijava;
-
             dgvPrijavljeni.DataSource = Takmicenje.Prijave;
+
+            PrijavljeniPlivaci.Clear();
+            foreach (Prijava pl in Takmicenje.Prijave)
+            {
+                PrijavljeniPlivaci.Add(pl.Plivac);
+            }
         }
 
         public void PrikaziPodatkeTakmicenja(int brojReda)

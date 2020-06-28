@@ -40,10 +40,5 @@ namespace Sistemske_operacije
             }
             lista = prijave;
         }
-
-        protected override void Validacija(IDomenskiObjekat objekat)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

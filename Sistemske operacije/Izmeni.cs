@@ -27,10 +27,5 @@ namespace Kontroler
                 throw new System.Exception("Sistem ne moze da zapamti novi objekat");
             }
         }
-
-        protected override void Validacija(IDomenskiObjekat objekat)
-        {
-            throw new System.NotImplementedException();
-        }
     }
 }

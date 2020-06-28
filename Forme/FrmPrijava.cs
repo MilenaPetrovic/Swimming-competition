@@ -13,7 +13,8 @@ namespace Forme
 {
     public partial class FrmPrijava : Form
     {
-        List<Plivac> sviPlivaci = KKI.KKIPlivac.Instance.Plivaci;
+        BindingList<Plivac> sviPlivaci = null;
+        BindingList<Plivac> prijavljeniPlivaci;
 
         public FrmPrijava()
         {
@@ -22,18 +23,97 @@ namespace Forme
             if(sviPlivaci == null)
             {
                 KKI.KKIPlivac.Instance.UcitajListuPlivaca(dgvSvi);
-                sviPlivaci = KKI.KKIPlivac.Instance.Plivaci;
+                sviPlivaci = new BindingList<Plivac>((KKI.KKIPlivac.Instance.Plivaci).Cast<Plivac>().ToList());
             }
 
-            PopuniFormu();
+            dgvSvi.DataSource = sviPlivaci;
 
-            dgvSvi.DataSource = sviPlivaci;           
-
+            prijavljeniPlivaci = KKI.KKITakmicenje.Instance.PrijavljeniPlivaci;
+            dgvPrijavljeni.DataSource = prijavljeniPlivaci;
+        }
+                        
+        private void btnSacuvaj_Click(object sender, EventArgs e)
+        {
+            try
+            {                
+                string poruka = KKI.KKITakmicenje.Instance.SacuvajNovePrijave();
+                MessageBox.Show(poruka, "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message, "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
-        private void PopuniFormu()
+        private void btnOdjavi_Click(object sender, EventArgs e)
         {
-            //prilikom dodavanja proveriti da li vec postoji u prijavljenim
+            List<DataGridViewRow> redovi = new List<DataGridViewRow>();
+
+            foreach (DataGridViewCell celija in dgvPrijavljeni.SelectedCells)
+            {
+                int rowIndex = celija.RowIndex;
+                bool postoji = false;
+                foreach (DataGridViewRow red in redovi)
+                {
+                    if (red.Index == rowIndex)
+                    {
+                        postoji = true;
+                        break;
+                    }
+                }
+
+                if (!postoji)
+                {
+                    redovi.Add(dgvPrijavljeni.Rows[rowIndex]);
+                }
+            }
+
+            try
+            {
+                KKI.KKITakmicenje.Instance.IzaberiPlivace(dgvPrijavljeni, redovi);
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message, "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnPrijavi_Click(object sender, EventArgs e)
+        {
+            List<DataGridViewRow> redovi = new List<DataGridViewRow>();
+
+            foreach (DataGridViewCell celija in dgvSvi.SelectedCells)
+            {
+                int rowIndex = celija.RowIndex;
+                bool postoji = false;
+                foreach (DataGridViewRow red in redovi)
+                {
+                    if (red.Index == rowIndex)
+                    {
+                        postoji = true;
+                        break;
+                    }
+                }
+
+                if (!postoji)
+                {
+                    redovi.Add(dgvSvi.Rows[rowIndex]);
+                }
+            }
+
+            try
+            {
+                KKI.KKITakmicenje.Instance.IzaberiPlivace(dgvSvi, redovi);
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message, "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnOdustani_Click(object sender, EventArgs e)
+        {
+            Dispose();
         }
     }
 }

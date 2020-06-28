@@ -53,14 +53,14 @@ namespace Domen
                 //}
                 else
                 {
-                    return $"takmicenjeID = {Takmicenje.TakmicenjeID} AND plivacID = '{Plivac.PlivacID}'";
+                    return $"takmicenjeID = {Takmicenje.TakmicenjeID} AND plivacID = {Plivac.PlivacID}";
                 }
             }
         }
         [Browsable(false)]
-        public string VrednostiZaInsert => throw new NotImplementedException();
+        public string VrednostiZaInsert => $"{Plivac.PlivacID},'{Takmicenje.TakmicenjeID}', '{DatumPrijave}', {Pozicija}, {OstvarenoVreme}";
         [Browsable(false)]
-        public string VrednostiZaUpdate => throw new NotImplementedException();
+        public string VrednostiZaUpdate => $"pozicija = {Pozicija}, ostvarenoVreme = {OstvarenoVreme}";
         [Browsable(false)]
         public string PrimarniKljuc => throw new NotImplementedException();
 

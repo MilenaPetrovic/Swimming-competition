@@ -188,5 +188,33 @@ namespace Kontroler
             }
             return false;
         }
+
+        public bool SacuvajNovePrijave(IDomenskiObjekat objekat)
+        {
+            OpstaSO oso = new SacuvajNovePrijave();
+            try
+            {
+                oso.IzvrsiSO(objekat);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool EvidencijaRezultata(IDomenskiObjekat objekat)
+        {
+            OpstaSO oso = new EvidencijaRezultata();
+            try
+            {
+                oso.IzvrsiSO(objekat);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
     }
 }

@@ -19,7 +19,6 @@ namespace Sistemske_operacije
                 broker.OtvoriKonekciju();
                 broker.ZapocniTransakciju();
 
-                //Validacija(objekat);
                 IzvrsiOperaciju(objekat);
 
                 broker.Commit(); 
@@ -28,6 +27,7 @@ namespace Sistemske_operacije
             {
                 Console.WriteLine(e.Message);
                 broker.Rollback();
+                throw new Exception("Zabranjeno brisanje!");
             }
             finally
             {
@@ -35,7 +35,6 @@ namespace Sistemske_operacije
             }
         }
 
-        protected abstract void Validacija(IDomenskiObjekat objekat);
         protected abstract void IzvrsiOperaciju(IDomenskiObjekat objekat);
     }
 }
