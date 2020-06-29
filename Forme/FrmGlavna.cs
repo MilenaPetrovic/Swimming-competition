@@ -19,7 +19,7 @@ namespace Forme
 
             UcitajTakmicenja();
 
-            //dgvTakmicenja.Columns[0].Visible = false;
+            dgvTakmicenja.Columns[0].Visible = false;
             //dgvTakmicenja.Columns[1].Width = 80;
             //dgvTakmicenja.Columns[2].Width = 100;
             //dgvTakmicenja.Columns[3].Width = 100;
@@ -113,6 +113,11 @@ namespace Forme
         {
             FrmPlivaci frmPlivaci = new FrmPlivaci();
             frmPlivaci.ShowDialog();
+        }
+
+        private void btnPretrazi_Click(object sender, EventArgs e)
+        {
+            KKI.KKITakmicenje.Instance.Pretraga(txtPretraga.Text, dgvTakmicenja);
         }
     }
 }

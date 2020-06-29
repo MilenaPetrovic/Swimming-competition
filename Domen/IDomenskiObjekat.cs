@@ -14,6 +14,7 @@ namespace Domen
         string VrednostiZaInsert { get; }
         string VrednostiZaUpdate { get; }
         string PrimarniKljuc { get; }
+        string Pretraga { get; }
 
         List<IDomenskiObjekat> VratiListu(SqlDataReader reader);
         void PostaviPrimarniKljuc(int id);
@@ -21,6 +22,5 @@ namespace Domen
         IDomenskiObjekat VratiPodDomen();
         void PostaviVrednost(IDomenskiObjekat ido);
         void PostaviVrednostPodDomena(IDomenskiObjekat ido);
-
     }
 }

@@ -63,7 +63,8 @@ namespace Domen
         public string VrednostiZaUpdate => $"pozicija = {Pozicija}, ostvarenoVreme = {OstvarenoVreme}";
         [Browsable(false)]
         public string PrimarniKljuc => throw new NotImplementedException();
-
+        [Browsable(false)]
+        public string Pretraga => throw new NotImplementedException();
 
         public void PostaviPrimarniKljuc(int id)
         {

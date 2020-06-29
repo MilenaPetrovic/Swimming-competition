@@ -32,6 +32,8 @@ namespace Domen
 
         public string PrimarniKljuc => throw new NotImplementedException();
 
+        public string Pretraga => throw new NotImplementedException();
+
         public void PostaviPrimarniKljuc(int id)
         {
             throw new NotImplementedException();

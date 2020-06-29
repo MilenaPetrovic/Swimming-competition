@@ -64,6 +64,7 @@ namespace Forme
             FrmPrijava frmPrijava = new FrmPrijava();
             frmPrijava.ShowDialog();
             KKITakmicenje.Instance.UcitajPrijave(dgvPrijavljeni);
+            txtBrojPrijavljenih.Text = KKITakmicenje.Instance.Takmicenje.Prijave.Count().ToString();
         }
 
         private void btnIzmeni_Click(object sender, EventArgs e)

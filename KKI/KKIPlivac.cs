@@ -77,11 +77,16 @@ namespace KKI
         public void UcitajListuPlivaca(DataGridView dgvPlivaciPretraga)
         {
             List<IDomenskiObjekat> rez = Kontroler.Kontroler.Instance.UcitajListuPlivaca();
-            
+
             //if (rez == null) return null;
 
+            PostaviListu(rez, dgvPlivaciPretraga);            
+        }
+
+        private void PostaviListu(List<IDomenskiObjekat> rez, DataGridView dgvPlivaciPretraga)
+        {
             List<Plivac> listaPlivaca = new List<Plivac>();
-            for(int i=0; i<rez.Count(); i++)
+            for (int i = 0; i < rez.Count(); i++)
             {
                 listaPlivaca.Add((Plivac)rez[i]);
             }
@@ -125,6 +130,14 @@ namespace KKI
             if (Kontroler.Kontroler.Instance.Izmeni(p))
                 return "Uspesno izmenjen plivac!";
             else return "Neuspesna izmena plivaca!";
+        }
+
+        public void Pretraga(string text, DataGridView dgvPlivaciPretraga)
+        {
+            Plivac p = new Plivac();
+            p.UpitPretrage = $"SELECT p.plivacID, p.imePlivaca, p.prezimePlivaca, p.datumRodjenja, p.pol, p.kategorijaID from Plivac p join Kategorija k on p.kategorijaID = k.kategorijaID WHERE imePlivaca LIKE '%{text}%' OR prezimePlivaca LIKE '%{text}%' OR p.pol LIKE '%{text}%' OR k.imeKategorije LIKE '%{text}%'";
+            List<IDomenskiObjekat> rez = Kontroler.Kontroler.Instance.Pretraga(p);
+            PostaviListu(rez, dgvPlivaciPretraga);
         }
 
         public void PrikaziPodatkePlivaca(int brojReda)

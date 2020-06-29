@@ -197,9 +197,26 @@ namespace Kontroler
                 oso.IzvrsiSO(objekat);
                 return true;
             }
-            catch
+            catch(Exception e)
             {
-                return false;
+                Console.WriteLine(e.Message);
+                throw e;
+            }
+        }
+
+        public List<IDomenskiObjekat> Pretraga(IDomenskiObjekat objekat)
+        {
+            OpstaSO oso = new Pretraga();
+            try
+            {
+                oso.IzvrsiSO(objekat);
+                List<IDomenskiObjekat> lista = ((Pretraga)oso).lista;
+                return lista;
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+                throw e;
             }
         }
 

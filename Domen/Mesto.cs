@@ -25,6 +25,8 @@ namespace Domen
 
         public string PrimarniKljuc => "ptt";
 
+        public string Pretraga => throw new NotImplementedException();
+
         public override string ToString()
         {
             return NazivMesta;

@@ -151,6 +151,7 @@ namespace KKI
             }
 
             Takmicenje.Prijave = novePrijave;
+            Takmicenje.BrojPrijava = Takmicenje.Prijave.Count();
 
             if (Kontroler.Kontroler.Instance.SacuvajNovePrijave(Takmicenje))
             {
@@ -160,6 +161,14 @@ namespace KKI
             {
                 return "Neuspesno dodavanje prijava!";
             }
+        }
+
+        public void Pretraga(string text, DataGridView dgvTakmicenja)
+        {
+            Takmicenje t = new Takmicenje();
+            t.UpitPretrage = $"SELECT t.takmicenjeID, t.nazivTakmicenja, t.datumOdrzavanja, t.brojPrijava, t.mestoOdrzavanja from Takmicenje t join Mesto m on t.mestoOdrzavanja = m.ptt WHERE nazivTakmicenja LIKE '%{text}%' OR datumOdrzavanja LIKE '%{text}%' OR brojPrijava LIKE '%{text}%' OR m.nazivMesta LIKE '%{text}%'";
+            List<IDomenskiObjekat> rez = Kontroler.Kontroler.Instance.Pretraga(t);
+            PostaviListu(rez, dgvTakmicenja);
         }
 
         private void UkloniPlivaca(Plivac p)
@@ -251,6 +260,11 @@ namespace KKI
 
             //if (rez == null) return null;
 
+            PostaviListu(rez, dgvTakmicenja);
+        }
+
+        private void PostaviListu(List<IDomenskiObjekat> rez, DataGridView dgvTakmicenja)
+        {
             List<Takmicenje> listaTakmicenja = new List<Takmicenje>();
             for (int i = 0; i < rez.Count(); i++)
             {

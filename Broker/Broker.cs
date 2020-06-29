@@ -17,8 +17,7 @@ namespace Broker
         {
             konekcija = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=PlivackaTakmicenja;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
         }
-
-
+        
         public void OtvoriKonekciju()
         {
             konekcija.Open();
@@ -53,6 +52,7 @@ namespace Broker
             reader.Close();
             return rezultat;
         }
+
         public List<IDomenskiObjekat> VratiListu(IDomenskiObjekat objekat)
         {
             SqlCommand command = new SqlCommand("", konekcija, transakcija);
@@ -92,8 +92,17 @@ namespace Broker
             SqlCommand command = new SqlCommand("", konekcija, transakcija);
             command.CommandText = $"UPDATE {objekat.NazivTabele} SET {objekat.VrednostiZaUpdate} " +
                 $"WHERE {objekat.UslovPretrage}";
-            return command.ExecuteNonQuery();            
+            return command.ExecuteNonQuery();
         }
 
+        public List<IDomenskiObjekat> Pretraga(IDomenskiObjekat objekat)
+        {
+            SqlCommand command = new SqlCommand("", konekcija, transakcija);
+            command.CommandText = objekat.Pretraga;
+            SqlDataReader reader = command.ExecuteReader();
+            List<IDomenskiObjekat> rezultat = objekat.VratiListu(reader);
+            reader.Close();
+            return rezultat;
+        }
     }
 }

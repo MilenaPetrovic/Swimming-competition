@@ -30,6 +30,9 @@ namespace Forme
 
             prijavljeniPlivaci = KKI.KKITakmicenje.Instance.PrijavljeniPlivaci;
             dgvPrijavljeni.DataSource = prijavljeniPlivaci;
+
+            dgvSvi.Columns[0].Visible = false;
+            dgvPrijavljeni.Columns[0].Visible = false;
         }
                         
         private void btnSacuvaj_Click(object sender, EventArgs e)
@@ -38,6 +41,7 @@ namespace Forme
             {                
                 string poruka = KKI.KKITakmicenje.Instance.SacuvajNovePrijave();
                 MessageBox.Show(poruka, "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Dispose();
             }
             catch (Exception exc)
             {

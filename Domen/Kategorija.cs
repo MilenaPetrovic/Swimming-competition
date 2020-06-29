@@ -25,6 +25,8 @@ namespace Domen
 
         public string PrimarniKljuc => "kategorijaID";
 
+        public string Pretraga => throw new NotImplementedException();
+
         public override string ToString()
         {
             return ImeKategorije;

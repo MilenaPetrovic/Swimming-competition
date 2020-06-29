@@ -21,8 +21,11 @@ namespace Forme
 
         private void btnPrijava_Click(object sender, EventArgs e)
         {
-            string msg = KKIGlavna.Instance.Login(txtUsername.Text, txtPassword.Text);
-            MessageBox.Show(msg);
+            string poruka = KKIGlavna.Instance.Login(txtUsername.Text, txtPassword.Text);
+            MessageBox.Show(poruka);
+
+            FrmGlavna frmGlavna = new FrmGlavna();
+            frmGlavna.ShowDialog();
         }
     }
 }

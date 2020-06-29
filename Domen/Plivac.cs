@@ -18,6 +18,9 @@ namespace Domen
         private Kategorija kategorija;
         private string pol;
 
+        [Browsable(false)]
+        private string upitPretrage;
+
         public int PlivacID { get => plivacID; set => plivacID = value; }
         [DisplayName("Ime plivaca")]
         public string ImePlivaca { get => imePlivaca; set => imePlivaca = value; }
@@ -33,9 +36,6 @@ namespace Domen
         public string NazivTabele => "Plivac";
 
         [Browsable(false)]
-        public string UslovPretrage => $"plivacID = {PlivacID}";
-
-        [Browsable(false)]
         public string VrednostiZaInsert => $"{PlivacID},'{ImePlivaca}', '{PrezimePlivaca}', '{DatumRodjenja}', {Kategorija.KategorijaID}, '{Pol}'";
 
         [Browsable(false)]
@@ -43,6 +43,15 @@ namespace Domen
 
         [Browsable(false)]
         public string PrimarniKljuc => "plivacID";
+
+        [Browsable(false)]
+        public string UslovPretrage => $"plivacID = {PlivacID}";
+
+        [Browsable(false)]
+        public string UpitPretrage { get => upitPretrage; set => upitPretrage = value; }
+
+        [Browsable(false)]
+        public string Pretraga => UpitPretrage;
 
         public void PostaviPrimarniKljuc(int id)
         {

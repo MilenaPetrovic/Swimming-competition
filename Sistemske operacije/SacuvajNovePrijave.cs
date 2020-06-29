@@ -21,7 +21,9 @@ namespace Sistemske_operacije
             foreach (Prijava p in takmicenje.Prijave)
             {
                 broker.Kreiraj(p);
-            }            
+            }
+
+            broker.Izmeni(takmicenje);
         }
     }
 }

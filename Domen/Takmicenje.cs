@@ -17,6 +17,9 @@ namespace Domen
         private int brojPrijava;
         private List<Prijava> prijave;
 
+        [Browsable(false)]
+        private string upitPretrage;
+        
 
         public int TakmicenjeID { get => takmicenjeID; set => takmicenjeID = value; }
         [DisplayName("Naziv takmicenja")]
@@ -50,6 +53,11 @@ namespace Domen
         [Browsable(false)]
         public string PrimarniKljuc => "takmicenjeID";
 
+        [Browsable(false)]
+        public string Pretraga => UpitPretrage;
+
+        [Browsable(false)]
+        public string UpitPretrage { get => upitPretrage; set => upitPretrage = value; }
 
         public void PostaviPrimarniKljuc(int id)
         {

@@ -20,7 +20,7 @@ namespace Forme
             UcitajPlivace();
 
             //sad nesto nece
-            //dgvPlivaciPretraga.Columns[0].Visible = false;
+            dgvPlivaciPretraga.Columns[0].Visible = false;
             dgvPlivaciPretraga.Columns[1].Width = 80;
             dgvPlivaciPretraga.Columns[2].Width = 100;
             dgvPlivaciPretraga.Columns[3].Width = 100;
@@ -103,6 +103,11 @@ namespace Forme
             frmUnosPlivaca.ShowDialog();
 
             KKIPlivac.Instance.UcitajListuPlivaca(dgvPlivaciPretraga);
+        }
+
+        private void btnPretrazi_Click(object sender, EventArgs e)
+        {
+            KKI.KKIPlivac.Instance.Pretraga(txtPretraga.Text, dgvPlivaciPretraga);
         }
     }
 }
