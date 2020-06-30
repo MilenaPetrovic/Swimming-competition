@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.menusStrip1 = new System.Windows.Forms.MenuStrip();
             this.plivaciToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.unosNovogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnDetaljniji = new System.Windows.Forms.Button();
@@ -36,21 +36,25 @@
             this.btnDodaj = new System.Windows.Forms.Button();
             this.txtPretraga = new System.Windows.Forms.TextBox();
             this.btnPretrazi = new System.Windows.Forms.Button();
-            this.menuStrip1.SuspendLayout();
+            this.odjavaMTSI = new System.Windows.Forms.ToolStripMenuItem();
+            this.adminMTSI = new System.Windows.Forms.ToolStripMenuItem();
+            this.menusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTakmicenja)).BeginInit();
             this.SuspendLayout();
             // 
-            // menuStrip1
+            // menusStrip1
             // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.plivaciToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(713, 28);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
+            this.menusStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
+            this.menusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.plivaciToolStripMenuItem,
+            this.odjavaMTSI,
+            this.adminMTSI});
+            this.menusStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menusStrip1.Name = "menusStrip1";
+            this.menusStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.menusStrip1.Size = new System.Drawing.Size(713, 28);
+            this.menusStrip1.TabIndex = 0;
             // 
             // plivaciToolStripMenuItem
             // 
@@ -64,7 +68,7 @@
             // unosNovogToolStripMenuItem
             // 
             this.unosNovogToolStripMenuItem.Name = "unosNovogToolStripMenuItem";
-            this.unosNovogToolStripMenuItem.Size = new System.Drawing.Size(163, 26);
+            this.unosNovogToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.unosNovogToolStripMenuItem.Text = "Unos novog";
             // 
             // btnDetaljniji
@@ -124,6 +128,21 @@
             this.btnPretrazi.UseVisualStyleBackColor = true;
             this.btnPretrazi.Click += new System.EventHandler(this.btnPretrazi_Click);
             // 
+            // odjavaMTSI
+            // 
+            this.odjavaMTSI.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.odjavaMTSI.Name = "odjavaMTSI";
+            this.odjavaMTSI.Size = new System.Drawing.Size(68, 24);
+            this.odjavaMTSI.Text = "Odjava";
+            this.odjavaMTSI.Click += new System.EventHandler(this.odjavaMTSI_Click);
+            // 
+            // adminMTSI
+            // 
+            this.adminMTSI.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.adminMTSI.Name = "adminMTSI";
+            this.adminMTSI.Size = new System.Drawing.Size(65, 24);
+            this.adminMTSI.Text = "Admin";
+            // 
             // FrmGlavna
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -133,14 +152,14 @@
             this.Controls.Add(this.btnPretrazi);
             this.Controls.Add(this.btnDetaljniji);
             this.Controls.Add(this.btnDodaj);
-            this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.menusStrip1);
             this.Controls.Add(this.dgvTakmicenja);
-            this.MainMenuStrip = this.menuStrip1;
+            this.MainMenuStrip = this.menusStrip1;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmGlavna";
             this.Text = "FrmGlavna";
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.menusStrip1.ResumeLayout(false);
+            this.menusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTakmicenja)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -149,7 +168,7 @@
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.MenuStrip menusStrip1;
         private System.Windows.Forms.ToolStripMenuItem plivaciToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem unosNovogToolStripMenuItem;
         private System.Windows.Forms.Button btnDetaljniji;
@@ -157,5 +176,8 @@
         private System.Windows.Forms.Button btnDodaj;
         private System.Windows.Forms.TextBox txtPretraga;
         private System.Windows.Forms.Button btnPretrazi;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem odjavaMTSI;
+        private System.Windows.Forms.ToolStripMenuItem adminMTSI;
     }
 }

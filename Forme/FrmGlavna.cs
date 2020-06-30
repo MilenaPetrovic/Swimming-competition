@@ -17,6 +17,7 @@ namespace Forme
         {
             InitializeComponent();
 
+            PostaviAdmina();
             UcitajTakmicenja();
 
             dgvTakmicenja.Columns[0].Visible = false;
@@ -24,6 +25,11 @@ namespace Forme
             //dgvTakmicenja.Columns[2].Width = 100;
             //dgvTakmicenja.Columns[3].Width = 100;
             //dgvTakmicenja.Columns[5].Width = 50;
+        }
+
+        private void PostaviAdmina()
+        {
+            adminMTSI.Text = Sesija.Instance.VratiImeAdmina();
         }
 
         private void UcitajTakmicenja()
@@ -118,6 +124,13 @@ namespace Forme
         private void btnPretrazi_Click(object sender, EventArgs e)
         {
             KKI.KKITakmicenje.Instance.Pretraga(txtPretraga.Text, dgvTakmicenja);
+        }
+
+        private void odjavaMTSI_Click(object sender, EventArgs e)
+        {
+            Sesija.Instance.Odjava();
+            MessageBox.Show("Uspešno ste se odjavili sa sistema!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Dispose();
         }
     }
 }

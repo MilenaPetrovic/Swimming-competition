@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Zajednicki;
 
 namespace KKI
 {
@@ -60,10 +61,10 @@ namespace KKI
                 BrojPrijava = 0,
                 DatumOdrzavanja = datum
             };
-
-            if (Kontroler.Kontroler.Instance.KreirajTakmicenje(t))
-                return "Uspesno dodato takmicenje!";
-            else return "Neuspesno dodavanje takmicenja!";
+                                    
+            Odgovor odg = Komunikacija.Instance.KreirajZahtev(Operacija.KreirajTakmicenje, t);
+            return odg.Poruka;
+            
         }
 
         public void IzaberiPlivace(DataGridView dgvI, List<DataGridViewRow> redovi)
@@ -141,7 +142,7 @@ namespace KKI
                     {
                         Takmicenje = Takmicenje,
                         Plivac = plivac,
-                        DatumPrijave = new DateTime(),
+                        DatumPrijave = DateTime.Now,
                         Pozicija = 0,
                         OstvarenoVreme = 0
                     };
@@ -152,22 +153,19 @@ namespace KKI
 
             Takmicenje.Prijave = novePrijave;
             Takmicenje.BrojPrijava = Takmicenje.Prijave.Count();
-
-            if (Kontroler.Kontroler.Instance.SacuvajNovePrijave(Takmicenje))
-            {
-                return "Uspesno dodate prijave.";
-            }
-            else
-            {
-                return "Neuspesno dodavanje prijava!";
-            }
+            
+            Odgovor odg = Komunikacija.Instance.KreirajZahtev(Operacija.SacuvajNovePrijave, Takmicenje);
+            return odg.Poruka;            
         }
 
         public void Pretraga(string text, DataGridView dgvTakmicenja)
         {
             Takmicenje t = new Takmicenje();
             t.UpitPretrage = $"SELECT t.takmicenjeID, t.nazivTakmicenja, t.datumOdrzavanja, t.brojPrijava, t.mestoOdrzavanja from Takmicenje t join Mesto m on t.mestoOdrzavanja = m.ptt WHERE nazivTakmicenja LIKE '%{text}%' OR datumOdrzavanja LIKE '%{text}%' OR brojPrijava LIKE '%{text}%' OR m.nazivMesta LIKE '%{text}%'";
-            List<IDomenskiObjekat> rez = Kontroler.Kontroler.Instance.Pretraga(t);
+
+            Odgovor odg = Komunikacija.Instance.KreirajZahtev(Operacija.Pretraga, t);
+            List<IDomenskiObjekat> rez = (odg.Objekat as List<IDomenskiObjekat>).Cast<IDomenskiObjekat>().ToList();
+
             PostaviListu(rez, dgvTakmicenja);
         }
 
@@ -212,16 +210,14 @@ namespace KKI
                 MestoOdrzavanja = m
             };
 
-            if (Kontroler.Kontroler.Instance.Izmeni(t))
-                return "Uspesno izmenjeno takmicenje!";
-            else return "Neuspesna izmena takmicenja!";
+            Odgovor odg = Komunikacija.Instance.KreirajZahtev(Operacija.Izmeni, t);
+            return odg.Poruka;
         }
 
         public string ObrisiTakmicenje()
         {
-            if (Kontroler.Kontroler.Instance.Obrisi(Takmicenje))
-                return "Uspesno je obrisano takmicenje!";
-            else return "Nije uspelo brisanje takmicenja!";
+            Odgovor odg = Komunikacija.Instance.KreirajZahtev(Operacija.Obrisi, Takmicenje);
+            return odg.Poruka;
         }
 
         public void UcitajPrijave(DataGridView dgvPrijavljeni)
@@ -229,7 +225,8 @@ namespace KKI
             Prijava p = new Prijava();
             p.Takmicenje = Takmicenje;
 
-            List<IDomenskiObjekat> rez = Kontroler.Kontroler.Instance.UcitajListuPrijava(p);
+            Odgovor odg = Komunikacija.Instance.KreirajZahtev(Operacija.UcitajListuPrijava, p);            
+            List<IDomenskiObjekat> rez = (odg.Objekat as List<IDomenskiObjekat>).Cast<IDomenskiObjekat>().ToList();
 
             //if (rez == null) return null;
 
@@ -256,7 +253,9 @@ namespace KKI
 
         public void UcitajListuTakmicenja(DataGridView dgvTakmicenja)
         {
-            List<IDomenskiObjekat> rez = Kontroler.Kontroler.Instance.UcitajListuTakmicenja();
+            Takmicenje t = new Takmicenje();
+            Odgovor odg = Komunikacija.Instance.KreirajZahtev(Operacija.UcitajListuTakmicenja, t);
+            List<IDomenskiObjekat> rez = (odg.Objekat as List<IDomenskiObjekat>).Cast<IDomenskiObjekat>().ToList();
 
             //if (rez == null) return null;
 
@@ -280,7 +279,9 @@ namespace KKI
         {
             Mesto m = new Mesto();
 
-            List<IDomenskiObjekat> rez = Kontroler.Kontroler.Instance.VratiListu(m);
+            Odgovor odg = Komunikacija.Instance.KreirajZahtev(Operacija.VratiListu, m);
+            List<IDomenskiObjekat> rez = (odg.Objekat as List<IDomenskiObjekat>).Cast<IDomenskiObjekat>().ToList();
+
             if (rez == null) return null;
 
             List<Mesto> listaMesta = new List<Mesto>();

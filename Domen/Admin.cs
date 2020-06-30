@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace Domen
 {
+    [Serializable]
     public class Admin : IDomenskiObjekat
     {
         private int adminID;

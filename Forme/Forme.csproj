@@ -151,9 +151,9 @@
       <Project>{3DA2088E-F781-467F-B89D-D1064297E5F2}</Project>
       <Name>KKI</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Kontroler\Kontroler.csproj">
-      <Project>{07EB996E-6F7E-4B45-8766-AF4592A88A02}</Project>
-      <Name>Kontroler</Name>
+    <ProjectReference Include="..\Zajednicki\Zajednicki.csproj">
+      <Project>{80F0E606-C6CA-42A8-AF4C-0CBA731BA9F1}</Project>
+      <Name>Zajednicki</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

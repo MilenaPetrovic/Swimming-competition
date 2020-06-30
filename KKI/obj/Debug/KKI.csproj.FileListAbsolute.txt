@@ -13,3 +13,5 @@ D:\FON\PS\Seminarski\Plivacka takmicenja\KKI\bin\Debug\Broker.pdb
 D:\FON\PS\Seminarski\Plivacka takmicenja\KKI\obj\Debug\KKI.csproj.CopyComplete
 D:\FON\PS\Seminarski\Plivacka takmicenja\KKI\obj\Debug\KKI.dll
 D:\FON\PS\Seminarski\Plivacka takmicenja\KKI\obj\Debug\KKI.pdb
+D:\FON\PS\Seminarski\Plivacka takmicenja\KKI\bin\Debug\Zajednicki.dll
+D:\FON\PS\Seminarski\Plivacka takmicenja\KKI\bin\Debug\Zajednicki.pdb

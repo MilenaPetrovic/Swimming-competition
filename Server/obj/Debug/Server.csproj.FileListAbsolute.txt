@@ -1,0 +1,21 @@
+D:\FON\PS\Seminarski\Plivacka takmicenja\Server\bin\Debug\Server.exe.config
+D:\FON\PS\Seminarski\Plivacka takmicenja\Server\bin\Debug\Server.exe
+D:\FON\PS\Seminarski\Plivacka takmicenja\Server\bin\Debug\Server.pdb
+D:\FON\PS\Seminarski\Plivacka takmicenja\Server\bin\Debug\Domen.dll
+D:\FON\PS\Seminarski\Plivacka takmicenja\Server\bin\Debug\Kontroler.dll
+D:\FON\PS\Seminarski\Plivacka takmicenja\Server\bin\Debug\Zajednicki.dll
+D:\FON\PS\Seminarski\Plivacka takmicenja\Server\bin\Debug\Sistemske operacije.dll
+D:\FON\PS\Seminarski\Plivacka takmicenja\Server\bin\Debug\Broker.dll
+D:\FON\PS\Seminarski\Plivacka takmicenja\Server\bin\Debug\Domen.pdb
+D:\FON\PS\Seminarski\Plivacka takmicenja\Server\bin\Debug\Kontroler.pdb
+D:\FON\PS\Seminarski\Plivacka takmicenja\Server\bin\Debug\Zajednicki.pdb
+D:\FON\PS\Seminarski\Plivacka takmicenja\Server\bin\Debug\Sistemske operacije.pdb
+D:\FON\PS\Seminarski\Plivacka takmicenja\Server\bin\Debug\Broker.pdb
+D:\FON\PS\Seminarski\Plivacka takmicenja\Server\obj\Debug\Server.csprojAssemblyReference.cache
+D:\FON\PS\Seminarski\Plivacka takmicenja\Server\obj\Debug\Server.FrmServer.resources
+D:\FON\PS\Seminarski\Plivacka takmicenja\Server\obj\Debug\Server.Properties.Resources.resources
+D:\FON\PS\Seminarski\Plivacka takmicenja\Server\obj\Debug\Server.csproj.GenerateResource.cache
+D:\FON\PS\Seminarski\Plivacka takmicenja\Server\obj\Debug\Server.csproj.CoreCompileInputs.cache
+D:\FON\PS\Seminarski\Plivacka takmicenja\Server\obj\Debug\Server.csproj.CopyComplete
+D:\FON\PS\Seminarski\Plivacka takmicenja\Server\obj\Debug\Server.exe
+D:\FON\PS\Seminarski\Plivacka takmicenja\Server\obj\Debug\Server.pdb

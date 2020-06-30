@@ -1,5 +1,4 @@
 ﻿using KKI;
-using Kontroler;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,11 +20,23 @@ namespace Forme
 
         private void btnPrijava_Click(object sender, EventArgs e)
         {
-            string poruka = KKIGlavna.Instance.Login(txtUsername.Text, txtPassword.Text);
-            MessageBox.Show(poruka);
+            try
+            {
+                if (!Komunikacija.Instance.PoveziSe())
+                    throw new Exception("Neuspesno povezivanje na server.");
 
-            FrmGlavna frmGlavna = new FrmGlavna();
-            frmGlavna.ShowDialog();
+                string poruka = KKIGlavna.Instance.Login(txtUsername.Text, txtPassword.Text);
+                MessageBox.Show(poruka, "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                FrmGlavna frmGlavna = new FrmGlavna();
+                frmGlavna.ShowDialog();
+
+                Dispose();
+            }
+            catch(Exception exc)
+            {
+                MessageBox.Show(exc.Message, "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }            
         }
     }
 }

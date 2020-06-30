@@ -40,5 +40,15 @@ namespace KKI
         {
             return $"{Admin.Ime} {Admin.Prezime}";
         }
+
+        public void Odjava()
+        {
+            admin = null;
+        }
+
+        public void Prijava(Admin a)
+        {
+            admin = a;
+        }
     }
 }

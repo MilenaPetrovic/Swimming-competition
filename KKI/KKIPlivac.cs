@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Zajednicki;
 
 namespace KKI
 {
@@ -62,21 +63,21 @@ namespace KKI
                 DatumRodjenja = datum
             };
 
-            if (Kontroler.Kontroler.Instance.KreirajPlivaca(p))
-                return "Uspesno dodat plivac!";
-            else return "Neuspesno dodavanje plivaca!";
+            Odgovor odg = Komunikacija.Instance.KreirajZahtev(Operacija.KreirajPlivaca, p);
+            return odg.Poruka;
         }
 
         public string ObrisiPlivaca()
         {
-            if (Kontroler.Kontroler.Instance.Obrisi(Plivac))
-                return "Uspesno je obrisan plivac!";
-            else return "Nije uspelo brisanje plivaca!";
+            Odgovor odg = Komunikacija.Instance.KreirajZahtev(Operacija.Obrisi, Plivac);
+            return odg.Poruka;
         }
 
         public void UcitajListuPlivaca(DataGridView dgvPlivaciPretraga)
         {
-            List<IDomenskiObjekat> rez = Kontroler.Kontroler.Instance.UcitajListuPlivaca();
+            Plivac t = new Plivac();
+            Odgovor odg = Komunikacija.Instance.KreirajZahtev(Operacija.UcitajListuPlivaca, t);
+            List<IDomenskiObjekat> rez = (odg.Objekat as List<IDomenskiObjekat>).Cast<IDomenskiObjekat>().ToList();
 
             //if (rez == null) return null;
 
@@ -127,16 +128,18 @@ namespace KKI
                 DatumRodjenja = datum
             };
 
-            if (Kontroler.Kontroler.Instance.Izmeni(p))
-                return "Uspesno izmenjen plivac!";
-            else return "Neuspesna izmena plivaca!";
+            Odgovor odg = Komunikacija.Instance.KreirajZahtev(Operacija.Izmeni, p);
+            return odg.Poruka;
         }
 
         public void Pretraga(string text, DataGridView dgvPlivaciPretraga)
         {
             Plivac p = new Plivac();
             p.UpitPretrage = $"SELECT p.plivacID, p.imePlivaca, p.prezimePlivaca, p.datumRodjenja, p.pol, p.kategorijaID from Plivac p join Kategorija k on p.kategorijaID = k.kategorijaID WHERE imePlivaca LIKE '%{text}%' OR prezimePlivaca LIKE '%{text}%' OR p.pol LIKE '%{text}%' OR k.imeKategorije LIKE '%{text}%'";
-            List<IDomenskiObjekat> rez = Kontroler.Kontroler.Instance.Pretraga(p);
+
+            Odgovor odg = Komunikacija.Instance.KreirajZahtev(Operacija.Pretraga, p);
+            List<IDomenskiObjekat> rez = (odg.Objekat as List<IDomenskiObjekat>).Cast<IDomenskiObjekat>().ToList();
+
             PostaviListu(rez, dgvPlivaciPretraga);
         }
 
@@ -148,7 +151,10 @@ namespace KKI
         public List<string> UcitajListuStilova()
         {
             Kategorija k = new Kategorija();
-            List<IDomenskiObjekat> rez = Kontroler.Kontroler.Instance.VratiListu(k);
+
+            Odgovor odg = Komunikacija.Instance.KreirajZahtev(Operacija.VratiListu, k);
+            List<IDomenskiObjekat> rez = (odg.Objekat as List<IDomenskiObjekat>).Cast<IDomenskiObjekat>().ToList();
+
             if (rez == null) return null;
 
             List<Kategorija> listaStilova = new List<Kategorija>();

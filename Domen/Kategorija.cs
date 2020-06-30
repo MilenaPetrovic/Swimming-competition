@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Domen
 {
+    [Serializable]
     public class Kategorija : IDomenskiObjekat
     {
         private int kategorijaID;

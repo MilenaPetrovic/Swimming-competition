@@ -99,9 +99,9 @@ namespace Kontroler
             }
         }
 
-        public List<IDomenskiObjekat> UcitajListuPrijava(Prijava p)
+        public List<IDomenskiObjekat> UcitajListuPrijava(IDomenskiObjekat objekat)
         {
-            IDomenskiObjekat ido = p;
+            IDomenskiObjekat ido = objekat;
             OpstaSO oso = new UcitajListuPrijava();
 
             try
@@ -117,14 +117,13 @@ namespace Kontroler
             }
         }
 
-        public List<IDomenskiObjekat> UcitajListuTakmicenja()
+        public List<IDomenskiObjekat> UcitajListuTakmicenja(IDomenskiObjekat objekat)
         {
-            IDomenskiObjekat ido = new Takmicenje();
             OpstaSO oso = new UcitajListuTakmicenja();
 
             try
             {
-                oso.IzvrsiSO(ido);
+                oso.IzvrsiSO(objekat);
                 List<IDomenskiObjekat> lista = ((UcitajListuTakmicenja)oso).lista;
                 return lista;
             }
@@ -145,20 +144,19 @@ namespace Kontroler
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
-                throw e;
+                return false;
             }
 
             return true;
         }
 
-        public List<IDomenskiObjekat> UcitajListuPlivaca()
+        public List<IDomenskiObjekat> UcitajListuPlivaca(IDomenskiObjekat objekat)
         {
-            IDomenskiObjekat ido = new Plivac();
             OpstaSO oso = new UcitajListuPlivaca();
 
             try
             {
-                oso.IzvrsiSO(ido);
+                oso.IzvrsiSO(objekat);
                 List<IDomenskiObjekat> lista = ((UcitajListuPlivaca)oso).lista;
                 return lista;
             }

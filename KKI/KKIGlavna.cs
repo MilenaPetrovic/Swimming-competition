@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Zajednicki;
 
 namespace KKI
 {
@@ -38,18 +39,25 @@ namespace KKI
             a.Username = username;
             a.Password = password;
 
-            //slanje kontroleru
 
-            a = (Admin)Kontroler.Kontroler.Instance.Login(a);
-
-            if (a != null)
+            // slanje
+            try
             {
-                Sesija.Instance.Admin = a;
-                return "Dobrodosli " + a.Ime + " " + a.Prezime + "!";
+                Odgovor odg = Komunikacija.Instance.KreirajZahtev(Operacija.Login, a);
+
+                a = (Admin)odg.Objekat;
+
+                if (a != null)
+                {
+                    Sesija.Instance.Prijava(a);
+                    return "Dobrodosli " + a.Ime + " " + a.Prezime + "!";
+                }
+                else return "Username ili password nisu ispravni!";
             }
-            else return "Username ili password nisu ispravni!";
-
+            catch (Exception exc)
+            {
+                throw exc;
+            }    
         }
-
     }
 }
