@@ -260,12 +260,12 @@ namespace Server
             if (objekat is IDomenskiObjekat &&
                 Kontroler.Kontroler.Instance.Izmeni(objekat as IDomenskiObjekat))
             {
-                odg.Poruka = "Uspesno izmenjeni podaci!";
+                odg.Poruka = "Sistem je zapamtio objekat!";
                 odg.Status = true;
             }
             else
             {
-                odg.Poruka = "Sistem ne može da sacuva izmenjene podatke!";
+                odg.Poruka = "Sistem ne može da zapamti objekat!";
                 odg.Status = false;
             }
             return odg;

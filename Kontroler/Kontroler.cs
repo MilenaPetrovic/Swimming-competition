@@ -189,7 +189,7 @@ namespace Kontroler
 
         public bool SacuvajNovePrijave(IDomenskiObjekat objekat)
         {
-            OpstaSO oso = new SacuvajNovePrijave();
+            OpstaSO oso = new KreirajPrijave();
             try
             {
                 oso.IzvrsiSO(objekat);

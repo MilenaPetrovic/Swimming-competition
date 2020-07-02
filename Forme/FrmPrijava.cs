@@ -11,12 +11,12 @@ using System.Windows.Forms;
 
 namespace Forme
 {
-    public partial class FrmPrijava : Form
+    public partial class Prijave : Form
     {
-        BindingList<Plivac> sviPlivaci = null;
-        BindingList<Plivac> prijavljeniPlivaci;
+        BindingList<Domen.Plivac> sviPlivaci = null;
+        BindingList<Domen.Plivac> prijavljeniPlivaci;
 
-        public FrmPrijava()
+        public Prijave()
         {
             InitializeComponent();
 
@@ -33,6 +33,11 @@ namespace Forme
 
             dgvSvi.Columns[0].Visible = false;
             dgvPrijavljeni.Columns[0].Visible = false;
+
+            dgvSvi.Columns[5].Width = 50;
+            dgvPrijavljeni.Columns[5].Width = 50;
+            dgvSvi.Columns[4].Width = 80;
+            dgvPrijavljeni.Columns[4].Width = 80;
         }
                         
         private void btnSacuvaj_Click(object sender, EventArgs e)

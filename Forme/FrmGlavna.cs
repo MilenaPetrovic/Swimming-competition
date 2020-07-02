@@ -21,10 +21,10 @@ namespace Forme
             UcitajTakmicenja();
 
             dgvTakmicenja.Columns[0].Visible = false;
-            //dgvTakmicenja.Columns[1].Width = 80;
-            //dgvTakmicenja.Columns[2].Width = 100;
-            //dgvTakmicenja.Columns[3].Width = 100;
-            //dgvTakmicenja.Columns[5].Width = 50;
+            dgvTakmicenja.Columns[1].Width = 120;
+            dgvTakmicenja.Columns[2].Width = 120;
+            dgvTakmicenja.Columns[3].Width = 100;
+            dgvTakmicenja.Columns[4].Width = 80;
         }
 
         private void PostaviAdmina()
@@ -64,7 +64,8 @@ namespace Forme
                 int brojReda = dgvTakmicenja.SelectedCells[0].RowIndex;
                 try
                 {
-                    KKITakmicenje.Instance.PrikaziPodatkeTakmicenja(brojReda);
+                    string poruka = KKITakmicenje.Instance.PrikaziPodatkeTakmicenja(brojReda);
+                    MessageBox.Show(poruka, "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
                 {
@@ -123,7 +124,8 @@ namespace Forme
 
         private void btnPretrazi_Click(object sender, EventArgs e)
         {
-            KKI.KKITakmicenje.Instance.Pretraga(txtPretraga.Text, dgvTakmicenja);
+            string poruka = KKI.KKITakmicenje.Instance.Pretraga(txtPretraga.Text, dgvTakmicenja);
+            MessageBox.Show(poruka, "", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void odjavaMTSI_Click(object sender, EventArgs e)

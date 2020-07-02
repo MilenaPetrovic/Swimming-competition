@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmGlavna));
             this.menusStrip1 = new System.Windows.Forms.MenuStrip();
             this.plivaciToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.unosNovogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.odjavaMTSI = new System.Windows.Forms.ToolStripMenuItem();
+            this.adminMTSI = new System.Windows.Forms.ToolStripMenuItem();
             this.btnDetaljniji = new System.Windows.Forms.Button();
             this.dgvTakmicenja = new System.Windows.Forms.DataGridView();
             this.btnDodaj = new System.Windows.Forms.Button();
             this.txtPretraga = new System.Windows.Forms.TextBox();
             this.btnPretrazi = new System.Windows.Forms.Button();
-            this.odjavaMTSI = new System.Windows.Forms.ToolStripMenuItem();
-            this.adminMTSI = new System.Windows.Forms.ToolStripMenuItem();
             this.menusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTakmicenja)).BeginInit();
             this.SuspendLayout();
@@ -58,18 +58,25 @@
             // 
             // plivaciToolStripMenuItem
             // 
-            this.plivaciToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.unosNovogToolStripMenuItem});
             this.plivaciToolStripMenuItem.Name = "plivaciToolStripMenuItem";
             this.plivaciToolStripMenuItem.Size = new System.Drawing.Size(63, 24);
             this.plivaciToolStripMenuItem.Text = "Plivaci";
             this.plivaciToolStripMenuItem.Click += new System.EventHandler(this.plivaciToolStripMenuItem_Click);
             // 
-            // unosNovogToolStripMenuItem
+            // odjavaMTSI
             // 
-            this.unosNovogToolStripMenuItem.Name = "unosNovogToolStripMenuItem";
-            this.unosNovogToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
-            this.unosNovogToolStripMenuItem.Text = "Unos novog";
+            this.odjavaMTSI.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.odjavaMTSI.Name = "odjavaMTSI";
+            this.odjavaMTSI.Size = new System.Drawing.Size(68, 24);
+            this.odjavaMTSI.Text = "Odjava";
+            this.odjavaMTSI.Click += new System.EventHandler(this.odjavaMTSI_Click);
+            // 
+            // adminMTSI
+            // 
+            this.adminMTSI.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.adminMTSI.Name = "adminMTSI";
+            this.adminMTSI.Size = new System.Drawing.Size(65, 24);
+            this.adminMTSI.Text = "Admin";
             // 
             // btnDetaljniji
             // 
@@ -88,11 +95,11 @@
             this.dgvTakmicenja.AllowUserToAddRows = false;
             this.dgvTakmicenja.AllowUserToDeleteRows = false;
             this.dgvTakmicenja.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTakmicenja.Location = new System.Drawing.Point(34, 115);
+            this.dgvTakmicenja.Location = new System.Drawing.Point(36, 113);
             this.dgvTakmicenja.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvTakmicenja.Name = "dgvTakmicenja";
             this.dgvTakmicenja.RowTemplate.Height = 24;
-            this.dgvTakmicenja.Size = new System.Drawing.Size(642, 224);
+            this.dgvTakmicenja.Size = new System.Drawing.Size(641, 224);
             this.dgvTakmicenja.TabIndex = 18;
             // 
             // btnDodaj
@@ -119,7 +126,7 @@
             // btnPretrazi
             // 
             this.btnPretrazi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPretrazi.Location = new System.Drawing.Point(423, 52);
+            this.btnPretrazi.Location = new System.Drawing.Point(423, 50);
             this.btnPretrazi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPretrazi.Name = "btnPretrazi";
             this.btnPretrazi.Size = new System.Drawing.Size(161, 41);
@@ -127,21 +134,6 @@
             this.btnPretrazi.Text = "Pretrazi";
             this.btnPretrazi.UseVisualStyleBackColor = true;
             this.btnPretrazi.Click += new System.EventHandler(this.btnPretrazi_Click);
-            // 
-            // odjavaMTSI
-            // 
-            this.odjavaMTSI.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.odjavaMTSI.Name = "odjavaMTSI";
-            this.odjavaMTSI.Size = new System.Drawing.Size(68, 24);
-            this.odjavaMTSI.Text = "Odjava";
-            this.odjavaMTSI.Click += new System.EventHandler(this.odjavaMTSI_Click);
-            // 
-            // adminMTSI
-            // 
-            this.adminMTSI.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.adminMTSI.Name = "adminMTSI";
-            this.adminMTSI.Size = new System.Drawing.Size(65, 24);
-            this.adminMTSI.Text = "Admin";
             // 
             // FrmGlavna
             // 
@@ -154,10 +146,13 @@
             this.Controls.Add(this.btnDodaj);
             this.Controls.Add(this.menusStrip1);
             this.Controls.Add(this.dgvTakmicenja);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menusStrip1;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmGlavna";
-            this.Text = "FrmGlavna";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Plivacka takmicenja";
             this.menusStrip1.ResumeLayout(false);
             this.menusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTakmicenja)).EndInit();
@@ -170,7 +165,6 @@
 
         private System.Windows.Forms.MenuStrip menusStrip1;
         private System.Windows.Forms.ToolStripMenuItem plivaciToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem unosNovogToolStripMenuItem;
         private System.Windows.Forms.Button btnDetaljniji;
         private System.Windows.Forms.DataGridView dgvTakmicenja;
         private System.Windows.Forms.Button btnDodaj;

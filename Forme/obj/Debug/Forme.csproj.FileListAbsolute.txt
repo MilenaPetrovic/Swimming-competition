@@ -25,6 +25,6 @@ D:\FON\PS\Seminarski\Plivacka takmicenja\Forme\bin\Debug\Kontroler.pdb
 D:\FON\PS\Seminarski\Plivacka takmicenja\Forme\bin\Debug\Sistemske operacije.pdb
 D:\FON\PS\Seminarski\Plivacka takmicenja\Forme\bin\Debug\Broker.pdb
 D:\FON\PS\Seminarski\Plivacka takmicenja\Forme\obj\Debug\Forme.csproj.CopyComplete
-D:\FON\PS\Seminarski\Plivacka takmicenja\Forme\obj\Debug\Forme.FrmPrijava.resources
 D:\FON\PS\Seminarski\Plivacka takmicenja\Forme\bin\Debug\Zajednicki.dll
 D:\FON\PS\Seminarski\Plivacka takmicenja\Forme\bin\Debug\Zajednicki.pdb
+D:\FON\PS\Seminarski\Plivacka takmicenja\Forme\obj\Debug\Forme.Prijave.resources

@@ -1,6 +1,6 @@
 ﻿namespace Forme
 {
-    partial class FrmPrijava
+    partial class Prijave
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Prijave));
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.btnPrijavi = new System.Windows.Forms.Button();
@@ -78,7 +79,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(680, 39);
+            this.label5.Location = new System.Drawing.Point(670, 39);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(128, 25);
             this.label5.TabIndex = 62;
@@ -89,12 +90,12 @@
             this.dgvSvi.AllowUserToAddRows = false;
             this.dgvSvi.AllowUserToDeleteRows = false;
             this.dgvSvi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSvi.Location = new System.Drawing.Point(675, 68);
+            this.dgvSvi.Location = new System.Drawing.Point(657, 68);
             this.dgvSvi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvSvi.Name = "dgvSvi";
             this.dgvSvi.ReadOnly = true;
             this.dgvSvi.RowTemplate.Height = 24;
-            this.dgvSvi.Size = new System.Drawing.Size(461, 233);
+            this.dgvSvi.Size = new System.Drawing.Size(479, 233);
             this.dgvSvi.TabIndex = 61;
             // 
             // label2
@@ -129,7 +130,7 @@
             this.dgvPrijavljeni.Name = "dgvPrijavljeni";
             this.dgvPrijavljeni.ReadOnly = true;
             this.dgvPrijavljeni.RowTemplate.Height = 24;
-            this.dgvPrijavljeni.Size = new System.Drawing.Size(435, 233);
+            this.dgvPrijavljeni.Size = new System.Drawing.Size(460, 233);
             this.dgvPrijavljeni.TabIndex = 58;
             // 
             // btnSacuvaj
@@ -156,7 +157,7 @@
             this.btnOdjavi.UseVisualStyleBackColor = true;
             this.btnOdjavi.Click += new System.EventHandler(this.btnOdjavi_Click);
             // 
-            // FrmPrijava
+            // Prijave
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -171,8 +172,11 @@
             this.Controls.Add(this.btnOdustani);
             this.Controls.Add(this.dgvPrijavljeni);
             this.Controls.Add(this.btnSacuvaj);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "FrmPrijava";
+            this.Name = "Prijave";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmPrijava";
             ((System.ComponentModel.ISupportInitialize)(this.dgvSvi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrijavljeni)).EndInit();

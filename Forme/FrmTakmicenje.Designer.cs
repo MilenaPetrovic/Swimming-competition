@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmTakmicenje));
             this.dgvPrijavljeni = new System.Windows.Forms.DataGridView();
             this.btnObrisi = new System.Windows.Forms.Button();
             this.datumOdrzavanja = new System.Windows.Forms.DateTimePicker();
@@ -51,11 +52,11 @@
             this.dgvPrijavljeni.AllowUserToAddRows = false;
             this.dgvPrijavljeni.AllowUserToDeleteRows = false;
             this.dgvPrijavljeni.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPrijavljeni.Location = new System.Drawing.Point(52, 194);
+            this.dgvPrijavljeni.Location = new System.Drawing.Point(64, 193);
             this.dgvPrijavljeni.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvPrijavljeni.Name = "dgvPrijavljeni";
             this.dgvPrijavljeni.RowTemplate.Height = 24;
-            this.dgvPrijavljeni.Size = new System.Drawing.Size(699, 233);
+            this.dgvPrijavljeni.Size = new System.Drawing.Size(671, 233);
             this.dgvPrijavljeni.TabIndex = 27;
             // 
             // btnObrisi
@@ -157,7 +158,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(48, 166);
+            this.label2.Location = new System.Drawing.Point(70, 166);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(178, 25);
             this.label2.TabIndex = 47;
@@ -198,7 +199,7 @@
             // btnRezultati
             // 
             this.btnRezultati.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRezultati.Location = new System.Drawing.Point(773, 273);
+            this.btnRezultati.Location = new System.Drawing.Point(773, 267);
             this.btnRezultati.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRezultati.Name = "btnRezultati";
             this.btnRezultati.Size = new System.Drawing.Size(148, 71);
@@ -211,7 +212,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(951, 517);
+            this.ClientSize = new System.Drawing.Size(951, 504);
             this.Controls.Add(this.btnRezultati);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.txtBrojPrijavljenih);
@@ -227,9 +228,12 @@
             this.Controls.Add(this.datumOdrzavanja);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnIzmeni);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmTakmicenje";
-            this.Text = "FrmTakmicenje";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Takmicenje";
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrijavljeni)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

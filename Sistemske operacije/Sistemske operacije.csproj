@@ -43,7 +43,7 @@
   <ItemGroup>
     <Compile Include="EvidencijaRezultata.cs" />
     <Compile Include="Pretraga.cs" />
-    <Compile Include="SacuvajNovePrijave.cs" />
+    <Compile Include="KreirajPrijave.cs" />
     <Compile Include="Izmeni.cs" />
     <Compile Include="KreirajPlivaca.cs" />
     <Compile Include="KreirajTakmicenje.cs" />

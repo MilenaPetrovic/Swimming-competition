@@ -40,6 +40,9 @@ namespace Forme
             dgvPrijavljeni.Columns[2].ReadOnly = true;
             dgvPrijavljeni.Columns[3].ReadOnly = true;
             dgvPrijavljeni.Columns[4].ReadOnly = true;
+
+            dgvPrijavljeni.Columns[5].Width = 80;
+            dgvPrijavljeni.Columns[6].Width = 80;
         }
 
         private void UcitajPrijave()
@@ -61,7 +64,7 @@ namespace Forme
 
         private void button2_Click(object sender, EventArgs e)
         {
-            FrmPrijava frmPrijava = new FrmPrijava();
+            Prijave frmPrijava = new Prijave();
             frmPrijava.ShowDialog();
             KKITakmicenje.Instance.UcitajPrijave(dgvPrijavljeni);
             txtBrojPrijavljenih.Text = KKITakmicenje.Instance.Takmicenje.Prijave.Count().ToString();

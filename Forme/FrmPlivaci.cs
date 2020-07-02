@@ -46,7 +46,8 @@ namespace Forme
                 int brojReda = dgvPlivaciPretraga.SelectedCells[0].RowIndex;
                 try
                 {
-                    KKIPlivac.Instance.PrikaziPodatkePlivaca(brojReda);
+                    string poruka = KKIPlivac.Instance.PrikaziPodatkePlivaca(brojReda);
+                    MessageBox.Show(poruka, "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
                 {
@@ -107,7 +108,8 @@ namespace Forme
 
         private void btnPretrazi_Click(object sender, EventArgs e)
         {
-            KKI.KKIPlivac.Instance.Pretraga(txtPretraga.Text, dgvPlivaciPretraga);
+            string poruka = KKI.KKIPlivac.Instance.Pretraga(txtPretraga.Text, dgvPlivaciPretraga);
+            MessageBox.Show(poruka, "", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

@@ -132,7 +132,7 @@ namespace KKI
             return odg.Poruka;
         }
 
-        public void Pretraga(string text, DataGridView dgvPlivaciPretraga)
+        public string Pretraga(string text, DataGridView dgvPlivaciPretraga)
         {
             Plivac p = new Plivac();
             p.UpitPretrage = $"SELECT p.plivacID, p.imePlivaca, p.prezimePlivaca, p.datumRodjenja, p.pol, p.kategorijaID from Plivac p join Kategorija k on p.kategorijaID = k.kategorijaID WHERE imePlivaca LIKE '%{text}%' OR prezimePlivaca LIKE '%{text}%' OR p.pol LIKE '%{text}%' OR k.imeKategorije LIKE '%{text}%'";
@@ -141,11 +141,29 @@ namespace KKI
             List<IDomenskiObjekat> rez = (odg.Objekat as List<IDomenskiObjekat>).Cast<IDomenskiObjekat>().ToList();
 
             PostaviListu(rez, dgvPlivaciPretraga);
+
+            if(rez.Count > 0)
+            {
+                return "Sistem je nasao plivace po zadatoj vrednosti!";
+            }
+            else
+            {
+                return "Sistem ne moze da nadje plivace po zadatoj vrednosti!";
+            }
+            
         }
 
-        public void PrikaziPodatkePlivaca(int brojReda)
+        public string PrikaziPodatkePlivaca(int brojReda)
         {
             Plivac = Plivaci[brojReda];
+            if (Plivac != null)
+            {
+                return "Sistem je nasao izabranog plivaca!";
+            }
+            else
+            {            
+                return "Sistem ne moze da nadje plivaca!";
+            }
         }
 
         public List<string> UcitajListuStilova()

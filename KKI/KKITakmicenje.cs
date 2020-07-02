@@ -158,7 +158,7 @@ namespace KKI
             return odg.Poruka;            
         }
 
-        public void Pretraga(string text, DataGridView dgvTakmicenja)
+        public string Pretraga(string text, DataGridView dgvTakmicenja)
         {
             Takmicenje t = new Takmicenje();
             t.UpitPretrage = $"SELECT t.takmicenjeID, t.nazivTakmicenja, t.datumOdrzavanja, t.brojPrijava, t.mestoOdrzavanja from Takmicenje t join Mesto m on t.mestoOdrzavanja = m.ptt WHERE nazivTakmicenja LIKE '%{text}%' OR datumOdrzavanja LIKE '%{text}%' OR brojPrijava LIKE '%{text}%' OR m.nazivMesta LIKE '%{text}%'";
@@ -167,6 +167,15 @@ namespace KKI
             List<IDomenskiObjekat> rez = (odg.Objekat as List<IDomenskiObjekat>).Cast<IDomenskiObjekat>().ToList();
 
             PostaviListu(rez, dgvTakmicenja);
+
+            if (rez.Count > 0)
+            {
+                return "Sistem je nasao takmicenja po zadatoj vrednosti!";
+            }
+            else
+            {
+                return "Sistem ne moze da nadje takmicenja po zadatoj vrednosti!";
+            }
         }
 
         private void UkloniPlivaca(Plivac p)
@@ -246,9 +255,17 @@ namespace KKI
             }
         }
 
-        public void PrikaziPodatkeTakmicenja(int brojReda)
+        public string PrikaziPodatkeTakmicenja(int brojReda)
         {
             Takmicenje = Takmicenja[brojReda];
+            if (Takmicenje != null)
+            {
+                return "Sistem je nasao izabrano takmicenje!";
+            }
+            else
+            {
+                return "Sistem ne moze da nadje takmicenje!";
+            }
         }
 
         public void UcitajListuTakmicenja(DataGridView dgvTakmicenja)

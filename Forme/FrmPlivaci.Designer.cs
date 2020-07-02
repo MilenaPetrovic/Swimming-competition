@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPlivaci));
             this.btnDodaj = new System.Windows.Forms.Button();
             this.dgvPlivaciPretraga = new System.Windows.Forms.DataGridView();
             this.btnDetaljniji = new System.Windows.Forms.Button();
@@ -53,12 +54,12 @@
             this.dgvPlivaciPretraga.AllowUserToAddRows = false;
             this.dgvPlivaciPretraga.AllowUserToDeleteRows = false;
             this.dgvPlivaciPretraga.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPlivaciPretraga.Location = new System.Drawing.Point(12, 103);
+            this.dgvPlivaciPretraga.Location = new System.Drawing.Point(40, 103);
             this.dgvPlivaciPretraga.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvPlivaciPretraga.Name = "dgvPlivaciPretraga";
             this.dgvPlivaciPretraga.ReadOnly = true;
             this.dgvPlivaciPretraga.RowTemplate.Height = 24;
-            this.dgvPlivaciPretraga.Size = new System.Drawing.Size(721, 240);
+            this.dgvPlivaciPretraga.Size = new System.Drawing.Size(655, 240);
             this.dgvPlivaciPretraga.TabIndex = 8;
             // 
             // btnDetaljniji
@@ -104,8 +105,11 @@
             this.Controls.Add(this.btnDetaljniji);
             this.Controls.Add(this.dgvPlivaciPretraga);
             this.Controls.Add(this.btnDodaj);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmPlivaci";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Plivaci";
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlivaciPretraga)).EndInit();
             this.ResumeLayout(false);

@@ -50,9 +50,9 @@ namespace KKI
                 if (a != null)
                 {
                     Sesija.Instance.Prijava(a);
-                    return "Dobrodosli " + a.Ime + " " + a.Prezime + "!";
+                    return "Uspesno ste se prijavili na sistem!";
                 }
-                else return "Username ili password nisu ispravni!";
+                else return "Neuspesno prijavljivanje na sistem!";
             }
             catch (Exception exc)
             {

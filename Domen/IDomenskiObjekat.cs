@@ -23,4 +23,4 @@ namespace Domen
         void PostaviVrednost(IDomenskiObjekat ido);
         void PostaviVrednostPodDomena(IDomenskiObjekat ido);
     }
-}
+}   

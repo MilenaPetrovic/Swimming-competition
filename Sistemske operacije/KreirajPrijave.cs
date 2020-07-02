@@ -7,7 +7,7 @@ using Domen;
 
 namespace Sistemske_operacije
 {
-    public class SacuvajNovePrijave : OpstaSO
+    public class KreirajPrijave : OpstaSO
     {
         protected override void IzvrsiOperaciju(IDomenskiObjekat objekat)
         {
