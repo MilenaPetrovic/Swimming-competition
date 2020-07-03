@@ -72,11 +72,19 @@ namespace Forme
 
         private void btnIzmeni_Click(object sender, EventArgs e)
         {
-            string poruka = KKI.KKITakmicenje.Instance.IzmeniTakmicenje(txtNaziv.Text, txtBrojPrijavljenih.Text, datumOdrzavanja.Text, cmbMesta.SelectedItem.ToString());
-
-            MessageBox.Show(poruka, "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            Dispose();
+            try
+            {
+                string poruka = KKI.KKITakmicenje.Instance.IzmeniTakmicenje(txtNaziv.Text, txtBrojPrijavljenih.Text, datumOdrzavanja.Text, cmbMesta.SelectedItem.ToString());
+                MessageBox.Show(poruka, "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Dispose();
+            }
+            catch(Exception ex)
+            {
+                if (ex.Message.Contains("instance"))
+                    MessageBox.Show("Neispravno unet naziv kategorije!", "Greska!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else
+                    MessageBox.Show(ex.Message, "Greska!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnObrisi_Click(object sender, EventArgs e)

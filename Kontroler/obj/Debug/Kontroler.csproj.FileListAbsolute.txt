@@ -1,4 +1,3 @@
-D:\FON\PS\Seminarski\Plivacka takmicenja\Kontroler\obj\Debug\Kontroler.csproj.CoreCompileInputs.cache
 D:\FON\PS\Seminarski\Plivacka takmicenja\Kontroler\bin\Debug\Kontroler.dll
 D:\FON\PS\Seminarski\Plivacka takmicenja\Kontroler\bin\Debug\Kontroler.pdb
 D:\FON\PS\Seminarski\Plivacka takmicenja\Kontroler\bin\Debug\Broker.dll

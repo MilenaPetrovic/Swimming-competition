@@ -39,7 +39,10 @@ namespace Forme
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Greska!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (ex.Message.Contains("instance"))
+                    MessageBox.Show("Neispravno unet naziv kategorije!", "Greska!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else
+                    MessageBox.Show(ex.Message, "Greska!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

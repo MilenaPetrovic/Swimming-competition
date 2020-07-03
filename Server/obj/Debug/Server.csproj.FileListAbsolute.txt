@@ -15,7 +15,6 @@ D:\FON\PS\Seminarski\Plivacka takmicenja\Server\obj\Debug\Server.csprojAssemblyR
 D:\FON\PS\Seminarski\Plivacka takmicenja\Server\obj\Debug\Server.FrmServer.resources
 D:\FON\PS\Seminarski\Plivacka takmicenja\Server\obj\Debug\Server.Properties.Resources.resources
 D:\FON\PS\Seminarski\Plivacka takmicenja\Server\obj\Debug\Server.csproj.GenerateResource.cache
-D:\FON\PS\Seminarski\Plivacka takmicenja\Server\obj\Debug\Server.csproj.CoreCompileInputs.cache
 D:\FON\PS\Seminarski\Plivacka takmicenja\Server\obj\Debug\Server.csproj.CopyComplete
 D:\FON\PS\Seminarski\Plivacka takmicenja\Server\obj\Debug\Server.exe
 D:\FON\PS\Seminarski\Plivacka takmicenja\Server\obj\Debug\Server.pdb

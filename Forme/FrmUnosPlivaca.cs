@@ -31,23 +31,32 @@ namespace Forme
         {
             try
             {
-                string pol;
+                string pol = "";
                 if (rbM.Checked)
                 {
                     pol = "M";
                 }
-                else
+                else if (rbZ.Checked)
                 {
                     pol = "Z";
+                }
+                else
+                {
+                    MessageBox.Show("Odaberite pol!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
                 }
 
                 string poruka = KKI.KKIPlivac.Instance.KreirajPlivaca(txtIme.Text, txtPrezime.Text, cmbStil.SelectedItem.ToString(), pol, datum.Text);
 
                 MessageBox.Show(poruka, "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Dispose();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Greska!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if(ex.Message.Contains("instance"))
+                    MessageBox.Show("Neispravno unet naziv kategorije!", "Greska!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else
+                    MessageBox.Show(ex.Message, "Greska!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

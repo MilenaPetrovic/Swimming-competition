@@ -51,7 +51,9 @@ namespace KKI
             for (int i = 0; i < Stilovi.Count; i++)
             {
                 if (Stilovi[i].ImeKategorije == stil)
+                {
                     k = Stilovi[i];
+                }
             }
 
             Plivac p = new Plivac
@@ -115,7 +117,9 @@ namespace KKI
             for (int i = 0; i < Stilovi.Count; i++)
             {
                 if (Stilovi[i].ImeKategorije == stil)
+                {
                     k = Stilovi[i];
+                }
             }
 
             Plivac p = new Plivac

@@ -1,5 +1,4 @@
 D:\FON\PS\Seminarski\Plivacka takmicenja\Sistemske operacije\obj\Debug\Sistemske operacije.csprojAssemblyReference.cache
-D:\FON\PS\Seminarski\Plivacka takmicenja\Sistemske operacije\obj\Debug\Sistemske operacije.csproj.CoreCompileInputs.cache
 D:\FON\PS\Seminarski\Plivacka takmicenja\Sistemske operacije\bin\Debug\Sistemske operacije.dll
 D:\FON\PS\Seminarski\Plivacka takmicenja\Sistemske operacije\bin\Debug\Sistemske operacije.pdb
 D:\FON\PS\Seminarski\Plivacka takmicenja\Sistemske operacije\bin\Debug\Broker.dll

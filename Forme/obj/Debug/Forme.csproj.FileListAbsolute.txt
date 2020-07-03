@@ -6,7 +6,6 @@ D:\FON\PS\Seminarski\Plivacka takmicenja\Forme\obj\Debug\Forme.FrmGlavna.resourc
 D:\FON\PS\Seminarski\Plivacka takmicenja\Forme\obj\Debug\Forme.FrmLogin.resources
 D:\FON\PS\Seminarski\Plivacka takmicenja\Forme\obj\Debug\Forme.Properties.Resources.resources
 D:\FON\PS\Seminarski\Plivacka takmicenja\Forme\obj\Debug\Forme.csproj.GenerateResource.cache
-D:\FON\PS\Seminarski\Plivacka takmicenja\Forme\obj\Debug\Forme.csproj.CoreCompileInputs.cache
 D:\FON\PS\Seminarski\Plivacka takmicenja\Forme\obj\Debug\Forme.exe
 D:\FON\PS\Seminarski\Plivacka takmicenja\Forme\obj\Debug\Forme.pdb
 D:\FON\PS\Seminarski\Plivacka takmicenja\Forme\obj\Debug\Forme.FrmPlivac.resources

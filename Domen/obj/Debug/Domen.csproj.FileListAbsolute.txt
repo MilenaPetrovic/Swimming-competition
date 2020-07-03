@@ -1,5 +1,4 @@
 D:\FON\PS\Seminarski\Plivacka takmicenja\Domen\obj\Debug\Domen.csprojAssemblyReference.cache
-D:\FON\PS\Seminarski\Plivacka takmicenja\Domen\obj\Debug\Domen.csproj.CoreCompileInputs.cache
 D:\FON\PS\Seminarski\Plivacka takmicenja\Domen\bin\Debug\Domen.dll
 D:\FON\PS\Seminarski\Plivacka takmicenja\Domen\bin\Debug\Domen.pdb
 D:\FON\PS\Seminarski\Plivacka takmicenja\Domen\obj\Debug\Domen.dll

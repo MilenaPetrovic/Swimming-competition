@@ -51,7 +51,9 @@ namespace KKI
             for (int i = 0; i < mesta.Count; i++)
             {
                 if (mesta[i].NazivMesta == mesto)
+                {
                     m = mesta[i];
+                }
             }
 
             Takmicenje t = new Takmicenje
@@ -208,7 +210,9 @@ namespace KKI
             for (int i = 0; i < Mesta.Count; i++)
             {
                 if (Mesta[i].NazivMesta == mesto)
+                {
                     m = Mesta[i];
+                }
             }
 
             Takmicenje t = new Takmicenje

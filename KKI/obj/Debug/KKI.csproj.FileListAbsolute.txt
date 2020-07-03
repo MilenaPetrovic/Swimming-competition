@@ -1,5 +1,4 @@
 D:\FON\PS\Seminarski\Plivacka takmicenja\KKI\obj\Debug\KKI.csprojAssemblyReference.cache
-D:\FON\PS\Seminarski\Plivacka takmicenja\KKI\obj\Debug\KKI.csproj.CoreCompileInputs.cache
 D:\FON\PS\Seminarski\Plivacka takmicenja\KKI\bin\Debug\KKI.dll
 D:\FON\PS\Seminarski\Plivacka takmicenja\KKI\bin\Debug\KKI.pdb
 D:\FON\PS\Seminarski\Plivacka takmicenja\KKI\bin\Debug\Domen.dll
